@@ -33,17 +33,18 @@ app.post('/register', (req, res) => {
         }
     );
 });
-
-//var server = app.listen(app.get('port'), function (){
-//    console.log('Express server successfully started and is listening on port:' + server.address().port);
-//});
+//uncommented the next 3 lines of code, lets see if it works
+var server = app.listen(app.get('port'), function (){
+    console.log('Express server successfully started and is listening on port:' + server.address().port);
+});
 
 //commenting this next line out to see if home page works
 //app.use(express.static(path.join(__dirname, '/client/build')));
-//changed(__dirname, '/client/build', index.html) to what is now showing in line 45
-app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, home.html));
-});
+//changed(__dirname, '/client/build', index.html) to what is now showing in line 46
+//just gonna comment the whole thing out
+//app.get('/', function(req, res){
+//    res.sendFile(path.join(__dirname, home.html));
+//});
 
 app.listen(3001, () => {
     console.log('we are goin');

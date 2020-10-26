@@ -3,6 +3,7 @@ var mysql = require('mysql');
 var app = express();
 var axios = require('axios');
 var cors = require('cors');
+const path = require('path');
 
 
 app.set('port', process.env.PORT || 3001);
@@ -34,6 +35,12 @@ app.post('/register', (req, res) => {
 //var server = app.listen(app.get('port'), function (){
 //    console.log('Express server successfully started and is listening on port:' + server.address().port);
 //});
+
+
+app.use(express.static(path.join(__dirname, '/client/build')));
+app.get('/', function(req, res){
+    res.sendFile(path.join(__dirname, 'clien/build', index.html));
+});
 
 app.listen(3001, () => {
     console.log('we are goin');

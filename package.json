@@ -4,11 +4,18 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "client": "cd client && npm start",
+    "start": "concurrently \"npm run dev\" \"npm run client\""
+    
   },
   "author": "Thomas Welborn, Erik Moctezuma, Joshua Renfro, Cherluk Sumdin",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.0",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4"

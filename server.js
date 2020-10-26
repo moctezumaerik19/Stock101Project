@@ -7,14 +7,16 @@ const path = require('path');
 
 
 app.set('port', process.env.PORT || 3001);
-
-//var router = require('./app/routes');
-//app.use('/', router);
+//
+//lines 12 and 13 were commented out but trying them out to see if the home page works
+var router = require('./app/routes');
+app.use('/', router);
 
 app.use(express.json());
 app.use(cors());
 
-//app.use(express.static(__dirname + '/public'));
+//line 19 was commented out by trying it out to see if the home page works
+app.use(express.static(__dirname + '/public'));
 
 var db = mysql.createConnection({host: "stock101.mysql.database.azure.com", user: "SoftwareProject@stock101", password: "Stock101", database: "main", port: "3306"});
 
@@ -36,10 +38,11 @@ app.post('/register', (req, res) => {
 //    console.log('Express server successfully started and is listening on port:' + server.address().port);
 //});
 
-
-app.use(express.static(path.join(__dirname, '/client/build')));
+//commenting this next line out to see if home page works
+//app.use(express.static(path.join(__dirname, '/client/build')));
+//changed(__dirname, '/client/build', index.html) to what is now showing in line 45
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, '/client/build', index.html));
+    res.sendFile(path.join(__dirname, home.html));
 });
 
 app.listen(3001, () => {

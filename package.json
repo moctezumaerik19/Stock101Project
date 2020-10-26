@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
     "client": "cd client && npm install -g serve && serve -s build",
-    "start": "concurrently \"npm run dev\" \"npm run client\""
+    "start": "node server.js"
     
   },
   "author": "Thomas Welborn, Erik Moctezuma, Joshua Renfro, Cherluk Sumdin",

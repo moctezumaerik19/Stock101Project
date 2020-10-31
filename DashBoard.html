@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      body
+      {
+        background-color: #DEDEDE;
+      }
+      .LogoNav
+      {
+        height: 60px;
+        width: 70px;
+      }
+      .dropdown-toggle::after
+      {
+        display:none;
+      }
+      .lesson
+      {
+        margin-top: 40px;
+        /*width: 950px;*/
+      }
+      .lesList
+      {
+
+        float: right;
+        margin-top:10px;
+      }
+      .container
+      {
+        background-color: white;
+        margin-top: 50px;
+        border-radius: 5px;
+        height: 100px;
+
+      }
+      .ModLogo
+      {
+        float: left;
+        padding: 15px
+
+      }
+      .Title1
+      {
+        float: clear;
+        padding-top: 28px;
+
+      }
+      .DropChoice
+      {
+        color: inherit;
+      }
+      .DropChoice:hover
+      {
+        color: gray;
+        text-decoration: none;
+      }
+
+
+    </style>
+
+    <title>modules</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><img class="LogoNav" src="logo.png" alt="BrandLogo"></a> <!--put brand logo here-->
+      <ul class="navbar-nav ml-auto">
+
+        <!--dropdown menu for profile-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <i class="far fa-user"></i></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">profile</a>
+            <a class="dropdown-item" href="Score.html">Score</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </li>
+    </nav>
+
+    <h2 class="text-center">Dashboard</h2>
+
+    <!--learning modules-->
+
+    <div class="container col-9">
+      <a class="dropdown-toggle DropChoice" data-toggle="dropdown" href="#">
+      <i class="fas fa-hand-holding-usd fa-4x ModLogo"></i>
+      <h4 class="Title1"> Basic of Trading</h4>
+      <i class="fa fa-th-large lesList"> 3 lessons</i>
+
+      <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Lesson1</a>-->
+      <div class="dropdown-menu lesson col-11">
+        <a class="dropdown-item" href="WhatsStock.html">What is a stock and what is trading</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Basic Factors of Trading</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">How to Make(&Protect) Money</a>
+      </div>
+    </div>
+
+
+
+
+    <!--
+    <a href="#" class= "text-dark">
+      <div class="card w-75" >
+        <div class="card-body">
+          <h5 class="card-title"> <i class="fas fa-hand-holding-usd"></i>  basic of trading</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-secondary">start</a>
+        </div>
+      </div>
+  </a>-->
+
+
+
+
+<!--
+
+    <div class="Mod1" >
+
+      <a class="far fa-money-bill-alt" href="#"><h4 class="text-white">Module 1</h4></a>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">basic of trading</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-secondary">start</a>
+        </div>
+      </div>
+    </div>-->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

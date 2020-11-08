@@ -108,7 +108,7 @@
           <th></th>
           <th>Class</th>
           <th>Code</th>
-          <th>Edit</th>
+        
         </tr>
       </thead>
       <tbody>
@@ -132,7 +132,7 @@
             $(".add-class").click(function(){
                 var name = $("#name").val();
                 var code = $("#code").val();
-                var markup = "<tr><td><input type='checkbox' name='record'></td> <td><a href='#'>" + name + "</a></td><td>" + code + "</td> <td>Edit</td>  </tr>";
+                var markup = "<tr><td><input type='checkbox' name='record'></td> <td><a href='#'>" + name + "</a></td><td>" + code + "</td>";
                 $("table tbody").append(markup);
             });
 

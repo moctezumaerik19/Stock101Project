@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      body
+      {
+        background-color: #DEDEDE;
+      }
+
+      .LogoNav
+      {
+        height: 60px;
+        width: 70px;
+      }
+      .MySec
+      {
+          margin-top: 50px;
+
+      }
+    .ClassName
+      {
+        margin-top: 20px;
+        margin-left: 14%;
+        margin-right: 15px;
+        height: 38px;
+        border-radius:5px;
+        border-style:solid;
+        border-color: gray;
+        outline: inherit;
+      }
+      .ClassCode
+      {
+        margin-left: 3%;
+        margin-right: 15px;
+        height: 38px;
+        border-radius:5px;
+        border-style:solid;
+        border-color: gray;
+        outline: inherit;
+      }
+      .delete-class
+      {
+        margin-left: 14%;
+      }
+      table
+      {
+        margin-left: 14%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border: solid 3px gray;
+
+        background-color: white;
+      }
+      th, td
+      {
+        border: solid 3px gray;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+
+
+
+    </style>
+
+    <title>Teacher Section</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><img class="LogoNav" src="logo.png" alt="BrandLogo"></a> <!--put brand logo here-->
+      <ul class="navbar-nav ml-auto">
+
+        <!--dropdown menu for profile-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <i class="far fa-user"></i></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">profile</a>
+            <!--<a class="dropdown-item" href="#">Score</a>-->
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </li>
+    </nav>
+
+    <h3 class="text-center MySec col-5">My Section</h3>
+
+    <form>
+      <input type="text" class="col-3 ClassName" id="name" placeholder="Enter Class Name">
+      <input type="text" class="col-3 ClassCode"id="code" placeholder="Enter Class code">
+      <!--button for adding classes-->
+      <input type="button" class="btn btn-secondary add-class" value="Add Class">
+    </form>
+
+    <!--Show class on table-->
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Class</th>
+          <th>Code</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <!--button for delete classes-->
+    <button type="button" class="btn btn-secondary delete-class">Delete Class</button>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS-->
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--jQuery-->
+    <script>
+        $(document).ready(function(){
+            $(".add-class").click(function(){
+                var name = $("#name").val();
+                var code = $("#code").val();
+                var markup = "<tr><td><input type='checkbox' name='record'></td> <td><a href='#'>" + name + "</a></td><td>" + code + "</td> <td>Edit</td>  </tr>";
+                $("table tbody").append(markup);
+            });
+
+            // Find and remove selected table rows
+            $(".delete-class").click(function(){
+                $("table tbody").find('input[name="record"]').each(function(){
+                	if($(this).is(":checked")){
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

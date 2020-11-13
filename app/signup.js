@@ -1,6 +1,6 @@
 var db = require('../db');
-var $ =require('jquery');
-var app = require('../server');
+//var $ =require('jquery');
+//var app = require('../server');
 
 //THE FOLLOWING CODE WORKS DO NOT DELETE
 //USE AS A TEMPLATE WHEN SIGN UPS OCCUR
@@ -59,15 +59,15 @@ function select(){
 
 
 
-app.post('/VIEW', function(req,res){
-    db.serialize(()=>{
-      db.each('SELECT * FROM student WHERE username =?', [req.body.signInName], function(err,result){     //db.each() is only one which is funtioning while reading data from the DB
-        if(err){
-          res.send("Error encountered while displaying");
-          return console.error(err.message);
-        }
-        //res.send(` ID: ${row.ID},    Name: ${row.NAME}`);
-        console.log("Entry displayed successfully");
-      });
-    });
-  });
+//app.post('/VIEW', function(req,res){
+//    db.serialize(()=>{
+//      db.each('SELECT * FROM student WHERE username =?', [req.body.signInName], function(err,result){     //db.each() is only one which is funtioning while reading data from the DB
+//        if(err){
+//          res.send("Error encountered while displaying");
+//          return console.error(err.message);
+//        }
+//        //res.send(` ID: ${row.ID},    Name: ${row.NAME}`);
+//        console.log("Entry displayed successfully");
+//      });
+//    });
+//  });

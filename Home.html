@@ -1,11 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+
+    <!--PLACE JS SCRIPTS HERE???????-->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
@@ -98,24 +103,35 @@
           <div class="modal-title text-center w-100">Sign In</div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
+        <form action="/VIEW" method="POST">
+        <fieldset>
         <div class="modal-body">
           <i id="userIcon"class="fas fa-user-circle"></i>
           <br><br>
           <i id="EmailIcon"class="fa fa-envelope"></i>
-          <input id="signInInput" type="email" class="email" placeholder="Enter Email"></input>
+          <input id="signInName" type="email" class="email" placeholder="Enter Email"></input>
           <br>
           <i id="pwdIcon" class="fa fa-lock"></i>
-          <input id="signInInput" type="password" class="pwd" placeholder="Enter Password"></input>
+          <input id="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
           <br><br>
-          <button type="button" class="btn btn-secondary">Sign In</button>
+          <button type="button" id="loginButton" onclick="myFunction(signInName.value,signInPass.value)" class="btn btn-secondary" value="submit">Sign In</button>
 
         </div>
+        </fieldset>
+        </form>
         <div class="modal-footer">
 
         </div>
       </div>
     </div>
   </div>
+
+  <!--TESTSTSTSTSTTS
+    THIS CODE WORKS USE THIS TEMPLATE TO CLICK BUTTONS
+  <form>
+    <input type="button"  value="Result" onclick="plswork(signupName.value)"/>
+    </form>
+  -->
 
   <!--Sign up Choice-->
   <div class="modal fade text-center" id="signup">
@@ -133,7 +149,7 @@
             </div>
             <div class="col">
               <i id="stuIcon" class="fas fa-users"></i>
-              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Signup" data-dismiss="modal">Student</button>
+              <button type="button" class="btn btn-secondary" id="stuButton" data-toggle="modal" data-target="#Signup" data-dismiss="modal">Student</button>
             </div>
           </div>
         </div>
@@ -156,26 +172,26 @@
           <div class="form-group">
             <div class="row">
               <div class="col-6">
-                <input class="form-control" type="text" placeholder="Name"></input>
+                <input class="form-control" type="text" id="signupName" placeholder="Name"></input>
               </div>
               <div class="col-6">
-                <input class="form-control" type="text" placeholder="Last Name"></input>
+                <input class="form-control" type="text" id="signupLastName" placeholder="Last Name"></input>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <input class="form-control" type="email" placeholder="Email"></input>
+            <input class="form-control" type="email" id="signupEmail" placeholder="Email"></input>
           </div>
           <div class="form-group">
-            <input class="form-control" type="password" placeholder="password"></input>
+            <input class="form-control" type="password" id="signupPassword" placeholder="password"></input>
           </div>
           <div class="form-group">
-            <input id="confPwd" class="form-control" type="password" placeholder="confirm password"></input>
+            <input class="form-control" type="password" id="signupConfirmpass" placeholder="confirm password"></input>
           </div>
           <div class="form-group">
              <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
           </div>
-          <button type="submit" class="btn btn-secondary">Sign Up</button>
+          <button type="button" id="justworkpls" class="btn btn-secondary"  >Sign Up</button>
         </div>
       </div>
       <div class="modal-footer">
@@ -183,10 +199,20 @@
     </div>
   </div>
 
+
+  
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="/Stock101Project/app/signup.js"></script>
+
+    
+    
+  
   </body>
 </html>
+ 

@@ -1,10 +1,11 @@
 var express = require('express');
-var mysql = require('mysql');
+//var mysql = require('mysql'); // see line 20 for reasoning while i commented this line out
 var app = express();
 var axios = require('axios');
 var cors = require('cors');
 const path = require('path');
 
+module.exports = app;
 
 app.set('port', process.env.PORT || 3001);
 //
@@ -18,7 +19,8 @@ app.use(cors());
 //line 19 was commented out by trying it out to see if the home page works
 app.use(express.static(__dirname + '/public'));
 
-var db = mysql.createConnection({host: "stock101.mysql.database.azure.com", user: "SoftwareProject@stock101", password: "Stock101", database: "main", port: "3306"});
+//commented out the db connection here because I made a separate connection js file so that its easier to call in other js files
+//var db = mysql.createConnection({host: "stock101.mysql.database.azure.com", user: "SoftwareProject@stock101", password: "Stock101", database: "main", port: "3306"});
 
 //app.post('/register', (req, res) => {
 

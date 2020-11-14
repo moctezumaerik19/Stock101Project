@@ -180,32 +180,34 @@
           <div class="modal-title text-center w-100">Sign Up</div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <form>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-6">
-                        <input class="form-control" type="text" id="signupName" placeholder="Name" required></input>
+        <div class="modal-body">
+            <form class="was-validated">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="form-control" type="text" id="signupName" placeholder="Name" required></input>
+                        </div>
+                        <div class="col-6">
+                            <input class="form-control" type="text" id="signupLastName" placeholder="Last Name" required></input>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <input class="form-control" type="text" id="signupLastName" placeholder="Last Name" required></input>
+                    <div class="form-group">
+                        <input class="form-control" type="email" id="signupEmail" placeholder="Email" required></input>
                     </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" id="signupPassword" placeholder="password" required></input>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" id="signupConfirmpass" placeholder="confirm password" required></input>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label"><input class="form-check-input" type="checkbox" required> I accept the <a href="aboutus.html">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" id="justworkpls" class="btn btn-secondary" onclick="signup(signupName.value, signupLastName.value, signupEmail.value, signupPassword.value, signupConfirmpass.value)">Sign Up</button>
                 </div>
-                <div class="form-group">
-                    <input class="form-control" type="email" id="signupEmail" placeholder="Email" required></input>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="password" id="signupPassword" placeholder="password" required></input>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="password" id="signupConfirmpass" placeholder="confirm password" required></input>
-                </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label"><input class="form-check-input" type="checkbox" required> I accept the <a href="aboutus.html">Privacy Policy</a></label>
-                </div>
-                <button type="submit" id="justworkpls" class="btn btn-secondary" onclick="signup(signupName.value, signupLastName.value, signupEmail.value, signupPassword.value, signupConfirmpass.value)">Sign Up</button>
-            </div>
-        </form>
-      </div>
+            </form>
+        </div>
+        </div>
       <div class="modal-footer">
       </div>
     </div>

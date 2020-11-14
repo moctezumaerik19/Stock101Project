@@ -30,6 +30,10 @@ function myFunction(name,pass) {
     //alert("POOOPOPOPP");
 }
 
+function signup(firstname, lastname, email, pass, confirmpass) {
+    alert("button pressed\nFunction called: values passed: " + firstname + ' ' + lastname + ' ' + email + ' ' + pass + ' ' + confirmpass);
+}
+
 function select(){
 
     alert("FUNCTION CALLED: VALUES PASSED: " + logname + " " + logpass);

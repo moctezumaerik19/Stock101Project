@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node server.js",
     "dev": "node server.js",
     "client": "cd client && npm install -g serve && serve -s build",
     "start": "node server.js"
@@ -14,9 +14,11 @@
   "dependencies": {
     "axios": "^0.21.0",
     "body-parser": "^1.19.0",
+    "bcrypt": "^5.0.0",
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "jquery": "^3.5.1",
     "jsdom": "^16.4.0",
     "mysql": "^2.18.1",

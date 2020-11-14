@@ -43,20 +43,22 @@ router.post('/',function(req,res){
             else {
                 console.log("CONNECTED");
                 var user1 =  req.body.signInName;
-                var sql = "SELECT * FROM student WHERE username = ?";
+                var pass1 = req.body.signInPass;
+                var sql = "SELECT * FROM student WHERE username = ? AND password = ?";
 
                 console.log(user1);
 
                 console.log("TEST");
 
-                db.query(sql,user1, function (err, result) {
+                db.query(sql,[user1,pass1], function (err, result) {
                     if(err) {
                         console.log(err); 
                         res.json({"error":true});
                     }
                     else { 
                         console.log(result); 
-                        res.json(result); 
+                        res.sendFile(path.join(__dirname, '../StudentDash.html'));
+                        //res.json(result); 
                     }
                 });
                
@@ -78,4 +80,28 @@ router.get('/Home.html',function(req, res){
 })
     
 
+router.get('/StudentDash.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../StudentDash.html'));
+})
+    
 
+router.get('/TeacherSection.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../TeacherSection.html'));
+})
+
+
+router.get('/WhatsStock.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../WhatsStock.html'));
+})
+
+
+
+router.get('/quizOne.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../quizOne.html'));
+})
+     
+
+router.get('/Score.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../Score.html'));
+})
+    

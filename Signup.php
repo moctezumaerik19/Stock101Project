@@ -2,8 +2,6 @@
 <html>
 <body>
 
-<script src="/Stock101Project/app/signup.js"></script>
-
 <?php
 $name = $lastname = $email = $pass = $confirmpass = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -13,10 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$email = $_POST["signupEmail"];
 	$pass = $_POST["signupPassword"];
 	$confirmpass = $_POST["signupConfirmpass"];
+	echo '<script type="text/javascript">alert("'.$name.'");</script>';
 }
 ?>
-
-signup(<?php echo $name;?>, <?php echo $lastname;?>, <?php echo $email;?>, <?php echo $pass;?>, <?php echo $confirmpass;?>);
 
 </body>
 </html>

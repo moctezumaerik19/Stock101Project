@@ -48,19 +48,31 @@ router.post('/',function(req,res){
 
                 console.log(user1);
 
-                console.log("TEST");
-
+                //console.log("TEST");
                 db.query(sql,[user1,pass1], function (err, result) {
                     if(err) {
                         console.log(err); 
                         res.json({"error":true});
                     }
-                    else { 
+                    else{
+                        if(result != ""){
+                            console.log("IF STATEMENT WORKS");
+                            res.sendFile(path.join(__dirname, '../StudentDash.html'));
+                        }
+                        else{
+                            console.log(result);
+                        }
                         console.log(result); 
-                        res.sendFile(path.join(__dirname, '../StudentDash.html'));
+                        //res.sendFile(path.join(__dirname, '../StudentDash.html'));
                         //res.json(result); 
+                        
                     }
                 });
+                
+                
+                
+
+
                
             }
         });

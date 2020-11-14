@@ -31,7 +31,7 @@ function myFunction(name,pass) {
 }
 
 function signup(firstname, lastname, email, pass, confirmpass) {
-    alert("button pressed\nFunction called: values passed: " + firstname + ' ' + lastname + ' ' + email + ' ' + pass + ' ' + confirmpass);
+   // alert("button pressed\nFunction called: values passed: " + firstname + ' ' + lastname + ' ' + email + ' ' + pass + ' ' + confirmpass);
 }
 
 function select(){

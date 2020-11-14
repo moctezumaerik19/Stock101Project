@@ -11,9 +11,9 @@ var db = require('../db');
 //});
 
 
-//function plswork(a) {
-// alert("POOP" + a);
-//}
+function plswork(a) {
+ alert("POOP" + a);
+}
 var logname;
 var logpass;
       

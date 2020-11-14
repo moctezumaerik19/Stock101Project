@@ -4,7 +4,8 @@ var app = express();
 var axios = require('axios');
 var cors = require('cors');
 const path = require('path');
-var db = require('./db');
+//var db = require('./db');
+
 module.exports = app;
 
 app.set('port', process.env.PORT || 3001);
@@ -12,6 +13,9 @@ app.set('port', process.env.PORT || 3001);
 //lines 12 and 13 were commented out but trying them out to see if the home page works
 var router = require('./app/routes');
 app.use('/', router);
+
+
+  
 
 app.use(express.json());
 app.use(cors());

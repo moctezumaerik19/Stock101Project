@@ -15,4 +15,3 @@ var db = mysql.createConnection({host: "stock101.mysql.database.azure.com", user
 //    });
 //  });
 
-module.exports = db;

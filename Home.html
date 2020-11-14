@@ -116,19 +116,23 @@
           <div class="modal-title text-center w-100">Sign In</div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <form action="/VIEW" method="POST">
-        <fieldset>
+        
         <div class="modal-body">
+          <form method="post" action="/" >
+          <div class="form-group">
+
           <i id="userIcon"class="fas fa-user-circle"></i>
           <br><br>
           <i id="EmailIcon"class="fa fa-envelope"></i>
-          <input id="signInName" type="email" class="email" placeholder="Enter Email"></input>
+          <input name="signInName" type="text" class="email" placeholder="Enter Email"></input>
           <br>
           <i id="pwdIcon" class="fa fa-lock"></i>
-          <input id="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
+          <input name="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
           <br><br>
-          <button type="button" id="loginButton" onclick="myFunction(signInName.value,signInPass.value)" class="btn btn-secondary" value="submit">Sign In</button>
-
+          <button type="submit" id="loginButton" onclick="myFunction(signInName.value,signInPass.value)" class="btn btn-secondary" >Sign In</button>
+          
+          </div>
+          </form>
         </div>
         </fieldset>
         </form>
@@ -139,8 +143,8 @@
     </div>
   </div>
 
-  <!--TESTSTSTSTSTTS
-    THIS CODE WORKS USE THIS TEMPLATE TO CLICK BUTTONS
+  <!--
+    Button works again just use to see if js files are routed correctly
   <form>
     <input type="button"  value="Result" onclick="plswork(signupName.value)"/>
     </form>

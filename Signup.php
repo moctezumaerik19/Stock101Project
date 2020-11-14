@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php
 $name = $lastname = $email = $pass = $confirmpass = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -14,6 +10,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	echo '<script type="text/javascript">alert("'.$name.'");</script>';
 }
 ?>
-
-</body>
-</html>

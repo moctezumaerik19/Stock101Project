@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 }
 ?>
 
-signup(<?php echo $name;?>, <?php echo $lastname;?>, <?php echo email;?>, <?php echo pass;?>, <?php echo confirmpass;?>);
+signup(<?php echo $name;?>, <?php echo $lastname;?>, <?php echo $email;?>, <?php echo $pass;?>, <?php echo $confirmpass;?>);
 
 </body>
 </html>

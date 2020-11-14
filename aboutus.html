@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      .LogoNav
+      {
+        height: 60px;
+        width: 70px;
+      }
+      .signin, .signup
+      {
+        min-width: 110px;
+	      max-height: 36px;
+        border: none;
+        background: transparent;
+      }
+      .modal-login
+      {
+        width:350px;
+
+      }
+      .modal-header
+      {
+        border: none;
+        font-size: 2em;
+      }
+      #signInInput
+      {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        padding-top: 20px;
+      }
+      #userIcon
+      {
+        font-size: 90px;
+      }
+      #EmailIcon
+      {
+        font-size: 20px;
+      }
+      #pwdIcon
+      {
+        font-size: 30px;
+      }
+      .modal-footer
+      {
+        border-top: none;
+      }
+      .form-group
+      {
+        margin-top: 15px;
+      }
+      #teachIcon, #stuIcon
+      {
+        font-size: 70px;
+        padding-bottom: 20px;
+      }
+      .container
+      {
+        margin-top: 35px;
+      }
+
+    </style>
+    <title>Home Demo</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a href="Home.html" class="navbar-brand">
+            <img class="LogoNav" src="logo.png" alt="BrandLogo">
+          </a>
+        </li>
+      </ul>
+      <div class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a href="aboutus.html" class="btn signin btn-secondary">About Us</a>
+          </li>
+          <li class="nav-item active">
+            <!---button for sign in-->
+            <button type="button" class="btn signin btn-secondary" data-toggle="modal" data-target="#login">sign in </button>
+          </li>
+          <li>
+            <!--button for sign up-->
+            <button type="button" class="btn signup btn-secondary" data-toggle="modal" data-target="#signup">sign up</button>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
+  <!--sign in modal-->
+  <div class="modal fade text-center" id="login">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="modal-title text-center w-100">Sign In</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <i id="userIcon"class="fas fa-user-circle"></i>
+          <br><br>
+          <i id="EmailIcon"class="fa fa-envelope"></i>
+          <input id="signInInput" type="email" class="email" placeholder="Enter Email"></input>
+          <br>
+          <i id="pwdIcon" class="fa fa-lock"></i>
+          <input id="signInInput" type="password" class="pwd" placeholder="Enter Password"></input>
+          <br><br>
+          <button type="button" class="btn btn-secondary">Sign In</button>
+
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sign up Choice: Teacher or Student-->
+  <div class="modal fade text-center" id="signup">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="modal-title text-center w-100">Sign Up</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <i id="teachIcon" class="fas fa-chalkboard-teacher"></i>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Signup"  data-dismiss="modal">Teacher</button>
+            </div>
+            <div class="col">
+              <i id="stuIcon" class="fas fa-users"></i>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#StudentSignup" data-dismiss="modal">Student</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Teacher sign up modal-->
+  <div class="modal fade text-center" id="Signup">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="modal-title text-center w-100">Sign Up</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <input class="form-control" type="text" placeholder="Name"></input>
+              </div>
+              <div class="col-6">
+                <input class="form-control" type="text" placeholder="Last Name"></input>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="email" placeholder="Email"></input>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" placeholder="password"></input>
+          </div>
+          <div class="form-group">
+            <input id="confPwd" class="form-control" type="password" placeholder="confirm password"></input>
+          </div>
+
+          <div class="form-group">
+             <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="aboutus.html">Privacy Policy</a></label>
+          </div>
+          <button type="submit" class="btn btn-secondary">Sign Up</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+
+  <!--Student sign up modal-->
+  <div class="modal fade text-center" id="StudentSignup">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="modal-title text-center w-100">Student Sign Up</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <input class="form-control" type="text" placeholder="Name"></input>
+              </div>
+              <div class="col-6">
+                <input class="form-control" type="text" placeholder="Last Name"></input>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="email" placeholder="Email"></input>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" placeholder="password"></input>
+          </div>
+          <div class="form-group">
+            <input id="confPwd" class="form-control" type="password" placeholder="confirm password"></input>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <input id="classCode" class="form-control" type="text" placeholder="code"></input>
+              </div>
+            </div>
+          </div>  
+          <div class="form-group">
+             <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="aboutus.html">Privacy Policy</a></label>
+          </div>
+          <button type="submit" class="btn btn-secondary">Sign Up</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Project Stock Inc. Privacy Policy</h3>
+    <p>Project Stock Inc. is committed to maintaining robust privacy protection for it users.
+      Our private policy is design to help you understand how we collect, use and protect the information you provide to us and to
+      assist you in making informed decisions when using our service.</p>
+    <ul>
+      <li class="font-weight-bold">Collected Information</li>
+      <p>We collect personal information include first name, last name and email which you
+        submit to us through the sign up process at the website. To become a user to our website, you will need to create a personal profile. You can create a profile by entering your name, email and a password. By signing up, you are authorizing us to collect, store and use your email address in accordance with this privacy policy.
+      </p>
+      <li class="font-weight-bold">How we use and share information</li>
+      <p>We DO NOT sell, trade or share for marketing purposes your personal information with third parties without your consent. In general,
+      the personal information you provide to us is used to help us communicate with you.
+      </p>
+      <li class="font-weight-bold">How we protected information</li>
+      <p>We implement security measures designed to protect your information from unauthorized access. Your account is protected by account password and we urge you to take steps to keep your personal information safe by not disclosing your password and by logging out of your account after each use. We further protect your information from potential security breached by implementing certain technological security measures includeing encryption, firewalls and secure socket layer technology. However, these measurement do not guarantee that your information will not be accessed, disclosed, altered or destroyed by breaches. By using our website, you acknowledge that you understand and agree to assume these risks.
+      </p>
+      <li class="font-weight-bold">Change to our privacy policy</li>
+      <p>Project Stock Inc. reserves the right to change this policy at any time. We will notify you of significant changes to our privacy policy by sending a notice to the primary email address specified in your account or by placing a prominent notice on our website. Significant changes will go into effect 30 days following such notification. Non-material changes or clarifications will take effect immediately. You should periodically check the website and this privacy page for updates.
+      </p>
+      <li class="font-weight-bold">Contact  us</li>
+      <p>If you have any question regarding this privacy policy or the practices of our website. Please contact us be sending an email to <p class="font-weight-bold">Stock.101@gmail.com</p>
+      </p>
+    </ul>
+    <br>
+    <p>Last updated: This privacy policy was last updated on 11/16/2020</p>
+  </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -77,18 +77,13 @@ router.post('/',function(req,res){
 });
 
 function validate() {
-
-    if (passin.length === validpass.length) {
-        for (index = 0; index < passin.length; index++) {
-            if (passin[index] !== ' ' || validpass[index] !== ' ') {
-                if (passin[index] !== validpass[index]) {
-                    document.getElementsByName("signupPassword").setCustomValidity("Passwords do not match!");
-                }
-            }
-            else {
-                document.getElementsByName("signupPassword").setCustomValidity("Passwords cannot contain spaces!");
-            }
-        }
+    if (document.getElementsByName('signupPassword').value == document.getElementsByName('confirmpass').value) {
+        document.getElementById('validpass').style.color = 'green';
+        document.getElementById('validpass').innerHTML = 'Valid';
+    }
+    else {
+        document.getElementById('validpass').style.color = 'red';
+        document.getElementById('validpass').innerHTML = 'passwords do not match';
     }
 }
 
@@ -125,7 +120,6 @@ router.post('/plswork', function (req, res) {
                 //console.log("TEST");
                 //alert("PASSWORDS DONT MATCH TRY AGAIN");
                 //res.send("PASSWORDS DONT MATCH TRY AGAIN");
-                document.getElementsById("invalidpass").innerHTML = "Password does not match!";
                 //res.sendFile(path.join(__dirname, '../Home.html'));
 
             }

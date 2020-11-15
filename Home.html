@@ -248,12 +248,17 @@
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" name="signupPassword" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" required></input>
+                    <input class="form-control" type="password" id="signupPassword" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" required></input>
                     
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="password" name="confirmPass" placeholder="confirm password" required></input>
-                    <div id="message"><p id="validpass" class="invalid"></p></div>
+                    <div id="message">
+                        <p id="letter" class="invalid">letter</p>
+                        <p id="capital" class="invalid">capital</p>
+                        <p id="length" class="invalid">length</p>
+                        <p id="number" class="invalid">number</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" id="signupClassName" placeholder="class name" required></input>

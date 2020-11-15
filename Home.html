@@ -8,9 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="/Stock101Project/public/css/styles.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         .LogoNav {
@@ -73,7 +72,67 @@
             margin-top: 50px;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="/Stock101Project/public/css/styles.css" />
+    <style>
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
 
+            /* Style the submit button */
+            input[type=submit] {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        /* Style the container for inputs */
+        .container {
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        /* The message box is shown when the user clicks on the password field */
+        #message {
+            display: none;
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+            #message p {
+                padding: 10px 35px;
+                font-size: 18px;
+            }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+            color: green;
+        }
+
+            .valid:before {
+                position: relative;
+                left: -35px;
+                content: "&#10004;";
+            }
+
+        /* Add a red text color and an "x" icon when the requirements are wrong */
+        .invalid {
+            color: red;
+        }
+
+            .invalid:before {
+                position: relative;
+                left: -35px;
+                content: "&#10006;";
+            }
+    </style>
     <title>Home</title>
 </head>
 	

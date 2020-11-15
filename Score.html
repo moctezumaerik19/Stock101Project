@@ -20,15 +20,31 @@
         width: 70px;
       }
 
+      table
+      {
+          margin-left: 40%;
+          margin-top: 20px;
+      }
+      th, td
+      {
+        border: 2px solid;
+        padding: 10px;
+
+      }
+      .score1
+      {
+        width:65px;
+      }
+
 
     </style>
 
-    <title>modules</title>
+    <title>Score</title>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"><img class="LogoNav" src="logo.png" alt="BrandLogo"></a> <!--put brand logo here-->
+      <a class="navbar-brand" href="#"><img class="LogoNav" src="/img/logo.png" alt="BrandLogo"></a> <!--put brand logo here-->
       <ul class="navbar-nav ml-auto">
 
         <!--dropdown menu for profile-->
@@ -37,26 +53,34 @@
             <i class="far fa-user"></i></a>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="#">profile</a>
-            <a class="dropdown-item" href="#">Score</a>
+            <a class="dropdown-item" href="Score.html">Score</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Log out</a>
           </div>
         </li>
     </nav>
-    <a href="DashBoard.html">back </a>
-
-    <h2 class="text-center">Score</h2>
+    <a href="StudentDash.html">back </a>
 
 
+    <h2 class="text-center">My Score</h2>
 
+    <table>
+      <tr>
+        <th rowspan="3">module1</th>
+        <th>lesson1</th>
+        <td class="score1" id="mod1les1"></td>
 
+      </tr>
+      <tr>
+        <th>lesson2</th>
+        <td class="score1" id="mod2les2"></td>
+      </tr>
+      <tr>
+        <th>lesson3</th>
+        <td class="score1" id="mod3les3"></td>
+      </tr>
 
-
-
-
-
-
-
+    <table>
 
 
     <!-- Optional JavaScript -->

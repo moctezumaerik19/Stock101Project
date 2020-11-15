@@ -183,7 +183,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-            <form method="post" class="needs-validation" novalidate>
+            <form action="/action_page.php" method="post" class="needs-validation" novalidate>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-6">
@@ -225,7 +225,7 @@
                     'use strict';
                     window.addEventListener('load', function () {
                         var forms = document.getElementsByClassName('needs-validation');
-                        var validation = array.prototype.filter.call(forms, function (form) {
+                        var validation = Array.prototype.filter.call(forms, function (form) {
                             form.addEventListener('submit', function (event) {
                                 if (form.checkValidity() === false) {
                                     event.preventDefault();

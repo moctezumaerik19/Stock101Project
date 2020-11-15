@@ -58,9 +58,9 @@ router.post('/',function(req,res){
                             
                 //UNCOMMENT FOR TESTING
                 //console.log("IF STATEMENT WORKS");
-                //res.json(result);
+                res.json(result);
                             
-                res.sendFile(path.join(__dirname, '../StudentDash.html'));
+                //res.sendFile(path.join(__dirname, '../StudentDash.html'));
             }
             else{
                             

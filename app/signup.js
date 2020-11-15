@@ -43,11 +43,10 @@
 //}
 function signup() {
     var firstname = document.forms["signupForm"]["signupName"].value;
-    var lastname = document.forms["signupForm"]["signupLastName"].value;
-    var email = document.forms["signupForm"]["signupEmail"].value;
+ //   var lastname = document.forms["signupForm"]["signupLastName"].value;
     var pass = document.forms["signupForm"]["signupPassword"].value;
     var confirmpass = document.forms["signupForm"]["signupConfirmpass"].value;
-    alert("button pressed\nFunction called: values passed: " + firstname + ' ' + lastname + ' ' + email + ' ' + pass + ' ' + confirmpass);
+    alert("button pressed\nFunction called: values passed: " + firstname + ' ' + pass + ' ' + confirmpass);
     return false;
 }
 

@@ -81,6 +81,8 @@ router.post('/plswork',function(req,res){
     console.log("CONNECTED");
     var userin = req.body.signupName;
     var passin = req.body.signupPassword;
+    var validpass = req.body.signupConfirmpass;
+    var classin = req.body.signupClassName;
     var sql2 = "INSERT INTO teacher (username, password ) VALUES (?,?)";
 
     console.log("something is happening at least ????");
@@ -88,20 +90,34 @@ router.post('/plswork',function(req,res){
     console.log(passin);
 
     //console.log("TEST");
-    db.query(sql2,[userin,passin], function (err, result) {
-        if(err) {
-            console.log(err); 
-            res.json({"error":true});
-        }
-        else{
-            console.log("INPUT WAS INSERTED");
 
-            //UNCOMMENT FOR TESTING
-            //console.log(result); 
-            res.sendFile(path.join(__dirname, '../Home.html'));
-            //res.json(result);      
+    if (passin.length === validpass.length) {
+        for (index = 0; index < passin.length; index++) {
+            if (passin[index] !== ' ' || validpass[index] !== ' ') {
+                if (passin[index] !== validpass[index]) {
+                    document.getElementsByName("signupPassword").setCustomValidity("Passwords do not match!");
+                }
+            }
+            else {
+                document.getElementsByName("signupPassword").setCustomValidity("Passwords cannot contain spaces!");
+            }
         }
-    });  
+
+        db.query(sql2, [userin, passin], function (err, result) {
+            if (err) {
+                console.log(err);
+                res.json({ "error": true });
+            }
+            else {
+                console.log("INPUT WAS INSERTED");
+
+                //UNCOMMENT FOR TESTING
+                //console.log(result); 
+                res.sendFile(path.join(__dirname, '../Home.html'));
+                //res.json(result);      
+            }
+        });
+    }
 });
 
 router.post('/plswork2',function(req,res){

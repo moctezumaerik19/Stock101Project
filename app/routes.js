@@ -116,7 +116,7 @@ router.post('/plswork',function(req,res){
     console.log("something is happening at least ????");
     console.log(userin);
     console.log(passin);
-
+    validate();
     //console.log("TEST");
 
     db.query(sql2, [userin, passin], function (err, result) {

@@ -76,6 +76,34 @@ router.post('/',function(req,res){
     });  
 });
 
+function validate() {
+    'use strict'
+    window.addEventListener('load', function () {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() == false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+    //if (passin.length === validpass.length) {
+    //    for (index = 0; index < passin.length; index++) {
+    //        if (passin[index] !== ' ' || validpass[index] !== ' ') {
+    //            if (passin[index] !== validpass[index]) {
+    //                document.getElementsByName("signupPassword").setCustomValidity("Passwords do not match!");
+    //            }
+    //        }
+    //        else {
+    //            document.getElementsByName("signupPassword").setCustomValidity("Passwords cannot contain spaces!");
+    //        }
+    //    }
+    //}
+}
+
 router.post('/plswork',function(req,res){
         
     console.log("CONNECTED");

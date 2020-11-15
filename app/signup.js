@@ -40,6 +40,7 @@ function signup() {
     var pass = document.forms["signupForm"]["signupPassword"].value;
     var confirmpass = document.forms["signupForm"]["signupConfirmpass"].value;
     alert("button pressed\nFunction called: values passed: " + firstname + ' ' + lastname + ' ' + email + ' ' + pass + ' ' + confirmpass);
+    return false;
 }
 
 function select(){

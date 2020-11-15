@@ -183,26 +183,26 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-            <form method="post" action="/plswork" name="signupForm" onsubmit="return signup()">
+            <form method="post" action="/plswork" name="signupForm" onsubmit="return signup()" class="was-validated">
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col">
+                    <div class="col">
+                        <div class="row">
                         
                         <input class="form-control" type="text" name="signupName" placeholder="Username" required></input>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                             </div>
-                        <div class="col">
+                        <div class="row">
                             <input class="form-control" type="password" name="signupPassword" placeholder="password" required></input>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
-                        <div class="col">
+                        <div class="row">
                         <input class="form-control" type="password" id="signupConfirmpass" placeholder="confirm password" required></input>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
-                        <div class="col">
+                        <div class="row">
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" required> I accept the <a href="aboutus.html">Privacy Policy</a>
                         </label>

@@ -50,7 +50,7 @@
 //    return false;
 //}
 function validate() {
-    if (document.getElementsByName('signupPassword').value === document.getElementsByName('confirmpass').value) {
+    if (document.getElementsByName('signupPassword').value == document.getElementsByName('confirmpass').value) {
         document.getElementById('validpass').style.color = 'green';
         document.getElementById('validpass').innerHTML = 'Valid';
     }

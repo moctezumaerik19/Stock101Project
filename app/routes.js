@@ -96,29 +96,28 @@ router.post('/plswork',function(req,res){
             if (passin[index] !== ' ' || validpass[index] !== ' ') {
                 if (passin[index] !== validpass[index]) {
                     document.getElementsByName("signupPassword").setCustomValidity("Passwords do not match!");
-                    return;
                 }
             }
             else {
                 document.getElementsByName("signupPassword").setCustomValidity("Passwords cannot contain spaces!");
-                return;
             }
         }
-    }
-    db.query(sql2,[userin,passin], function (err, result) {
-        if(err) {
-            console.log(err); 
-            res.json({"error":true});
-        }
-        else{
-            console.log("INPUT WAS INSERTED");
 
-            //UNCOMMENT FOR TESTING
-            //console.log(result); 
-            res.sendFile(path.join(__dirname, '../Home.html'));
-            //res.json(result);      
-        }
-    });  
+        db.query(sql2, [userin, passin], function (err, result) {
+            if (err) {
+                console.log(err);
+                res.json({ "error": true });
+            }
+            else {
+                console.log("INPUT WAS INSERTED");
+
+                //UNCOMMENT FOR TESTING
+                //console.log(result); 
+                res.sendFile(path.join(__dirname, '../Home.html'));
+                //res.json(result);      
+            }
+        });
+    }
 });
 
 router.post('/plswork2',function(req,res){

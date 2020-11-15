@@ -49,7 +49,16 @@
 //    alert("button pressed\nFunction called: values passed: " + firstname + ' ' + pass + ' ' + confirmpass);
 //    return false;
 //}
-
+function validate() {
+    if (document.getElementsByName('signupPassword').value == document.getElementsByName('confirmpass').value) {
+        document.getElementById('validpass').style.color = 'green';
+        document.getElementById('validpass').innerHTML = 'Valid';
+    }
+    else {
+        document.getElementById('validpass').style.color = 'red';
+        document.getElementById('validpass').innerHTML = 'passwords do not match';
+    }
+}
 //function select(){
 //
 //    alert("FUNCTION CALLED: VALUES PASSED: " + logname + " " + logpass);

@@ -76,17 +76,6 @@ router.post('/',function(req,res){
     });  
 });
 
-function validate() {
-    if (document.getElementsByName('signupPassword').value == document.getElementsByName('confirmpass').value) {
-        document.getElementById('validpass').style.color = 'green';
-        document.getElementById('validpass').innerHTML = 'Valid';
-    }
-    else {
-        document.getElementById('validpass').style.color = 'red';
-        document.getElementById('validpass').innerHTML = 'passwords do not match';
-    }
-}
-
 router.post('/plswork', function (req, res) {
 
     console.log("CONNECTED");

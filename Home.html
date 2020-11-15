@@ -196,8 +196,8 @@
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="password" name="confirmPass" placeholder="confirm password" required></input>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
+                    <div class="valid-feedback" id="validpass"></div>
+                    <div class="invalid-feedback" id="invalidpass"></div>
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" id="signupClassName" placeholder="class name" required></input>
@@ -211,7 +211,7 @@
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Check this box to continue.</div>
                 </div>
-                <button type="submit" id="signupButton" class="btn btn-secondary">Sign Up</button>
+                <button type="submit" id="signupButton" class="btn btn-secondary" data-toggle="modal" data-target="#Signup"  data-dismiss="modal">Sign Up</button>
             </form>
         </div>
         </div>

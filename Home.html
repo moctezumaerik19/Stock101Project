@@ -124,7 +124,7 @@
           <i id="userIcon"class="fas fa-user-circle"></i>
           <br><br>
           <i id="EmailIcon"class="fa fa-envelope"></i>
-          <input name="signInName" type="text" class="email" placeholder="Enter Email"></input>
+          <input name="signInName" type="text" class="email" placeholder="Enter Username"></input>
           <br>
           <i id="pwdIcon" class="fa fa-lock"></i>
           <input name="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
@@ -164,7 +164,7 @@
             </div>
             <div class="col">
               <i id="stuIcon" class="fas fa-users"></i>
-              <button type="button" class="btn btn-secondary" id="stuButton" data-toggle="modal" data-target="#Signup" data-dismiss="modal">Student</button>
+              <button type="button" class="btn btn-secondary" id="stuButton" data-toggle="modal" data-target="#StudentSignup" data-dismiss="modal">Student</button>
             </div>
           </div>
         </div>
@@ -183,43 +183,30 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-            <form name="signupForm" method="post" class="was-validated" onsubmit="return signup()">
+            <form method="post" action="/plswork">
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-6">
-                            <input class="form-control" type="text" id="signupName" placeholder="Name" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="col-6">
-                            <input class="form-control" type="text" id="signupLastName" placeholder="Last Name" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="email" id="signupEmail" placeholder="Email" required></input>
+                    
+                        
+                        <input class="form-control" type="text" name="signupName" placeholder="Username" required></input>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="password" id="signupPassword" placeholder="password" required></input>
+                             
+                        <input class="form-control" type="password" name="signupPassword" placeholder="password" required></input>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                    <div class="form-group">
+                    
                         <input class="form-control" type="password" id="signupConfirmpass" placeholder="confirm password" required></input>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                    <div class="form-group form-check">
+                    
+                    
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" required> I accept the <a href="aboutus.html">Privacy Policy</a>
                         </label>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Check this box to continue.</div>
-                    </div>
-                    <button type="submit" id="signupButton" class="btn btn-secondary">Sign Up</button>
+                    
+                        <button type="submit" id="signupButton" class="btn btn-secondary">Sign Up</button>
                 </div>
             </form>
         </div>
@@ -238,37 +225,18 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
+          <form method="post" action="/plswork2">
           <div class="form-group">
-            <div class="row">
-              <div class="col-6">
-                <input class="form-control" type="text" placeholder="Name"></input>
-              </div>
-              <div class="col-6">
-                <input class="form-control" type="text" placeholder="Last Name"></input>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="email" placeholder="Email"></input>
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="password" placeholder="password"></input>
-          </div>
-          <div class="form-group">
-            <input id="confPwd" class="form-control" type="password" placeholder="confirm password"></input>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="form-group">
-                <input id="classCode" class="form-control" type="text" placeholder="code"></input>
-              </div>
-            </div>
-          </div>  
-          <div class="form-group">
+
+            <input name="stuName" class="form-control" type="text" placeholder="Username"></input>
+            <input name="stuPass" class="form-control" type="password" placeholder="password"></input>
+            <input id="confPwd" class="form-control" type="password" placeholder="confirm password"></input>          
+            <input id="classCode" name="bode" class="form-control" type="text" placeholder="code"></input>
              <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="aboutus.html">Privacy Policy</a></label>
+             <button type="submit" class="btn btn-secondary">Sign Up</button>
           </div>
-          <button type="submit" class="btn btn-secondary">Sign Up</button>
-        </div>
+        </form>
+
       </div>
       <div class="modal-footer">
       </div>

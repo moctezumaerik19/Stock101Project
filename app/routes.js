@@ -76,10 +76,10 @@ router.post('/',function(req,res){
     });  
 });
 
-router.post('/',function(req,res){
+router.post('/plswork',function(req,res){
         
     console.log("CONNECTED");
-    var userin = req.body.signupname;
+    var userin = req.body.signupName;
     var passin = req.body.signupPassword;
     var sql2 = "INSERT INTO teacher (username, password ) VALUES (?,?)";
 
@@ -88,35 +88,51 @@ router.post('/',function(req,res){
     console.log(passin);
 
     //console.log("TEST");
-    db.query(sql,[userin,passin], function (err, result) {
+    db.query(sql2,[userin,passin], function (err, result) {
         if(err) {
             console.log(err); 
             res.json({"error":true});
         }
         else{
-            if(result != ""){
-                            
-                //UNCOMMENT FOR TESTING
-                console.log("IF STATEMENT WORKS");
-                //res.json(result);
-                            
-                res.sendFile(path.join(__dirname, '../StudentDash.html'));
-            }
-            else{
-                console.log("something is wonky");    
-                res.sendFile(path.join(__dirname, '../Home.html'));
-                console.log(result);
-            }
+            console.log("INPUT WAS INSERTED");
 
             //UNCOMMENT FOR TESTING
             //console.log(result); 
-            //res.sendFile(path.join(__dirname, '../StudentDash.html'));
+            res.sendFile(path.join(__dirname, '../Home.html'));
             //res.json(result);      
         }
     });  
 });
 
+router.post('/plswork2',function(req,res){
+        
+    console.log("CONNECTED");
+    var userin = req.body.stuName;
+    var passin = req.body.stuPass;
+    var codeT = req.body.bode;
+    var sql2 = "INSERT INTO student (username, password, teacherId) VALUES (?,?,?)";
 
+    console.log("something is happening at least ????");
+    console.log(userin);
+    console.log(passin);
+    console.log(codeT);
+
+    //console.log("TEST");
+    db.query(sql2,[userin,passin,codeT], function (err, result) {
+        if(err) {
+            console.log(err); 
+            res.json({"error":true});
+        }
+        else{
+            console.log("INPUT WAS INSERTED");
+
+            //UNCOMMENT FOR TESTING
+            //console.log(result); 
+            res.sendFile(path.join(__dirname, '../Home.html'));
+            //res.json(result);      
+        }
+    });  
+});
 
 //html files should be routed after this line (JUST WORKS IDK WHY)
 
@@ -133,6 +149,9 @@ router.get('/StudentDash.html',function(req, res){
     res.sendFile(path.join(__dirname, '../StudentDash.html'));
 })
     
+router.get('/TeacherDash.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../TeacherDash.html'));
+})
 
 router.get('/TeacherSection.html',function(req, res){
     res.sendFile(path.join(__dirname, '../TeacherSection.html'));
@@ -143,13 +162,23 @@ router.get('/WhatsStock.html',function(req, res){
     res.sendFile(path.join(__dirname, '../WhatsStock.html'));
 })
 
+router.get('/WhatsStockteach.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../WhatsStockteach.html'));
+})
 
 router.get('/quizOne.html',function(req, res){
     res.sendFile(path.join(__dirname, '../quizOne.html'));
 })
-     
+    
+router.get('/quizOneTeacher.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../quizOneTeacher.html'));
+})
 
 router.get('/Score.html',function(req, res){
     res.sendFile(path.join(__dirname, '../Score.html'));
+})
+    
+router.get('/teachScore.html',function(req, res){
+    res.sendFile(path.join(__dirname, '../teachScore.html'));
 })
     

@@ -195,7 +195,7 @@
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" id="signupConfirmpass" placeholder="confirm password" required></input>
+                    <input class="form-control" type="password" name="confirmPass" placeholder="confirm password" required></input>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -231,19 +231,29 @@
         <div class="modal-body">
             <form method="post" action="/plswork2">
                 <div class="form-group">
-                    <input name="stuName" class="form-control" type="text" placeholder="Username"></input>
+                    <input name="stuName" class="form-control" type="text" placeholder="Username" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
-                    <input name="stuPass" class="form-control" type="password" placeholder="password"></input>
+                    <input name="stuPass" class="form-control" type="password" placeholder="password" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
-                    <input id="confPwd" class="form-control" type="password" placeholder="confirm password"></input>
+                    <input name="confirmPass2" class="form-control" type="password" placeholder="confirm password" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
-                    <input id="classCode" name="bode" class="form-control" type="text" placeholder="class code"></input>
+                    <input id="classCode" name="bode" class="form-control" type="text" placeholder="class code" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
                     <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="aboutus.html">Privacy Policy</a></label>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this box to continue.</div>
                 </div>
                 <button type="submit" class="btn btn-secondary">Sign Up</button>
             </form>

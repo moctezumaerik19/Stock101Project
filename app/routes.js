@@ -58,9 +58,9 @@ router.post('/',function(req,res){
                             
                 //UNCOMMENT FOR TESTING
                 //console.log("IF STATEMENT WORKS");
-                res.json(result);
+                //res.json(result);
                             
-                //res.sendFile(path.join(__dirname, '../StudentDash.html'));
+                res.sendFile(path.join(__dirname, '../StudentDash.html'));
             }
             else{
                             
@@ -81,43 +81,55 @@ router.post('/plswork',function(req,res){
     console.log("CONNECTED");
     var userin = req.body.signupName;
     var passin = req.body.signupPassword;
-    var validpass = req.body.signupConfirmpass;
-    var classin = req.body.signupClassName;
+    var passcheck = req.body.confirmPass;
     var sql2 = "INSERT INTO teacher (username, password ) VALUES (?,?)";
+    var sqlcheck2 ="SELECT username FROM teacher WHERE username =?";
 
     console.log("something is happening at least ????");
     console.log(userin);
     console.log(passin);
 
-    //console.log("TEST");
-
-    if (passin.length === validpass.length) {
-        for (index = 0; index < passin.length; index++) {
-            if (passin[index] !== ' ' || validpass[index] !== ' ') {
-                if (passin[index] !== validpass[index]) {
-                    document.getElementsByName("signupPassword").setCustomValidity("Passwords do not match!");
-                }
-            }
-            else {
-                document.getElementsByName("signupPassword").setCustomValidity("Passwords cannot contain spaces!");
-            }
+    db.query(sqlcheck2,userin, function(err,result){
+        if(err) {
+            console.log(err); 
+            res.json({"error":true});
         }
+        if(result != ""){
+            //CHECKS FOR USERS ALREADY IN DATA BASE
+            console.log("username already exists check");
+            res.sendFile(path.join(__dirname, '../Home.html'));
+        }
+        else{
 
-        db.query(sql2, [userin, passin], function (err, result) {
-            if (err) {
-                console.log(err);
-                res.json({ "error": true });
-            }
-            else {
-                console.log("INPUT WAS INSERTED");
 
-                //UNCOMMENT FOR TESTING
-                //console.log(result); 
-                res.sendFile(path.join(__dirname, '../Home.html'));
-                //res.json(result);      
+
+
+            if(passin != passcheck){
+
+            //console.log("TEST");
+            //alert("PASSWORDS DONT MATCH TRY AGAIN");
+            //res.send("PASSWORDS DONT MATCH TRY AGAIN");
+            res.sendFile(path.join(__dirname, '../Home.html'));
+
             }
-        });
-    }
+            else{
+                db.query(sql2,[userin,passin], function (err, result) {
+                    if(err) {
+                        console.log(err); 
+                        res.json({"error":true});
+                    }
+                    else{
+                        console.log("INPUT WAS INSERTED");
+
+                        //UNCOMMENT FOR TESTING
+                        //console.log(result); 
+                        res.sendFile(path.join(__dirname, '../Home.html'));
+                        //res.json(result);      
+                    }
+                });
+            }   
+        }
+    });   
 });
 
 router.post('/plswork2',function(req,res){
@@ -126,28 +138,56 @@ router.post('/plswork2',function(req,res){
     var userin = req.body.stuName;
     var passin = req.body.stuPass;
     var codeT = req.body.bode;
+    var passcheck2 = req.body.confirmPass2;
     var sql2 = "INSERT INTO student (username, password, teacherId) VALUES (?,?,?)";
+    var sqlcheck = "SELECT username FROM student WHERE username = ?";
 
     console.log("something is happening at least ????");
     console.log(userin);
     console.log(passin);
     console.log(codeT);
 
-    //console.log("TEST");
-    db.query(sql2,[userin,passin,codeT], function (err, result) {
+    db.query(sqlcheck,userin, function(err,result){
         if(err) {
             console.log(err); 
             res.json({"error":true});
         }
-        else{
-            console.log("INPUT WAS INSERTED");
-
-            //UNCOMMENT FOR TESTING
-            //console.log(result); 
+        if(result != ""){
+            //CHECKS FOR USERS ALREADY IN DATA BASE
+            console.log("username already exists check");
             res.sendFile(path.join(__dirname, '../Home.html'));
-            //res.json(result);      
         }
-    });  
+        else{
+
+            if(passin != passcheck2){
+                //CHECKS FOR MATCHING PASSWORDS
+                //console.log("TEST");
+                //alert("PASSWORDS DONT MATCH TRY AGAIN");
+                //res.send("PASSWORDS DONT MATCH TRY AGAIN");
+                res.sendFile(path.join(__dirname, '../Home.html'));
+            
+            }
+            
+            else{
+
+                //console.log("TEST");
+                db.query(sql2,[userin,passin,codeT], function (err, result) {
+                    if(err) {
+                        console.log(err); 
+                        res.json({"error":true});
+                    }
+                    else{
+                        console.log("INPUT WAS INSERTED");
+
+                        //UNCOMMENT FOR TESTING
+                        //console.log(result); 
+                        res.sendFile(path.join(__dirname, '../Home.html'));
+                        //res.json(result);      
+                    }
+                });
+            }  
+        }
+    });
 });
 
 //html files should be routed after this line (JUST WORKS IDK WHY)

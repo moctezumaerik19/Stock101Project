@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      body
+      {
+        background-color: #DEDEDE;
+      }
+
+      .LogoNav
+      {
+        height: 60px;
+        width: 70px;
+      }
+      .backButton
+      {
+        color: black;
+      }
+      .backButton:hover
+      {
+        text-decoration: none;
+      }
+      form{
+        margin-left: 120px;
+      }
+      #showScore
+      {
+        visibility: hidden;
+      }
+      .modal
+      {
+        width: 500px;
+        margin-left: 40%;
+
+      }
+      .close
+      {
+        width:100px;
+        margin-left: 40%;
+        margin-bottom: 15px;
+      }
+      .QuizSubmit
+      {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+
+    </style>
+
+    <title>Quiz 1</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><img class="LogoNav" src="logo.png" alt="BrandLogo"></a> <!--put brand logo here-->
+      <ul class="navbar-nav ml-auto">
+
+        <!--dropdown menu for profile-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <i class="far fa-user"></i></a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">profile</a>
+            <a class="dropdown-item" href="Score.html">Score</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </li>
+    </nav>
+    <!--Back to lesson one-->
+    <a class= "backButton" href="WhatsStockteach.html">back </a>
+
+    <h2 class="text-center">Quiz</h2>
+    <!--Quiz question-->
+    <form id="Quiz" name="quiz">
+      <p>1.what is stock market</p>
+      <input type="radio" id="mulChoice" name="q1" value="wrong1">A fancy grocery store
+      <br>
+      <input type="radio" id="mulChoice" name="q1" value="wrong2">A place where people sell half price business
+      <br>
+      <input type="radio" id="mulChoice" name="q1" value="wrong3">A market where people buy products which the merchants have a lot of stock of
+      <br>
+      <input type="radio" id="mulChoice" name="q1" value="right">A place where parts of businesses are bought and sold
+      <br>
+
+      <p>2. what is unit of stock? </p>
+      <input type="radio" id="mulChoice" name="q2" value="2wrong1">piece
+      <br>
+      <input type="radio" id="mulChoice" name="q2" value="2wrong2">stocker
+      <br>
+      <input type="radio" id="mulChoice" name="q2" value="2wrong3">part
+      <br>
+      <input type="radio" id="mulChoice" name="q2" value="2right">share
+      <br>
+
+      <p>3. what is stock market tracking?</p>
+      <input type="radio" id="mulChoice" name="q3" value="3wrong1">businesses
+      <br>
+      <input type="radio" id="mulChoice" name="q3" value="3wrong2">investors
+      <br>
+      <input type="radio" id="mulChoice" name="q3" value="3wrong3">grocery store
+      <br>
+      <input type="radio" id="mulChoice" name="q3" value="3right">supply and demand
+      <br>
+
+      <input class=" QuizSubmit btn btn-secondary" data-toggle="modal" data-target="#resultPopup" id="button" type="button" value="Submit" onclick="result();">
+    </form>
+    <div id="showScore">
+      <div class="modal fade text-center" id="resultPopup">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <p id="key1"></p>
+            <p id="key2"></p>
+            <p id="key3"></p>
+            <p id="yourScore"></p>
+            <a href="TeacherDash.html" class="btn btn-secondary close">close</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--show score after finish-->
+
+
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      function result()
+      {
+
+          document.getElementById("key1").innerHTML = "correct answer for #1  is A place where parts of businesses are bought and sold."
+
+          document.getElementById("key2").innerHTML = "correct answer for #2  is share."
+
+          document.getElementById("key3").innerHTML = "correct answer for #3  is supply and demand."
+
+        document.getElementById("showScore").style.visibility = "visible";
+
+        //document.getElementById("yourScore").innerHTML = "You got "+ correct + " out of 3.";
+
+      }
+    </script>
+  </body>
+</html>

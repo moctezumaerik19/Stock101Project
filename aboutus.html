@@ -106,17 +106,23 @@
           <div class="modal-title text-center w-100">Sign In</div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
+
         <div class="modal-body">
+          <form method="post" action="/" >
+          <div class="form-group">
+
           <i id="userIcon"class="fas fa-user-circle"></i>
           <br><br>
           <i id="EmailIcon"class="fa fa-envelope"></i>
-          <input id="signInInput" type="email" class="email" placeholder="Enter Email"></input>
+          <input name="signInName" type="text" class="email" placeholder="Enter Email"></input>
           <br>
           <i id="pwdIcon" class="fa fa-lock"></i>
-          <input id="signInInput" type="password" class="pwd" placeholder="Enter Password"></input>
+          <input name="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
           <br><br>
-          <button type="button" class="btn btn-secondary">Sign In</button>
-
+          <button type="submit" id="loginButton" onclick="myFunction(signInName.value,signInPass.value)" class="btn btn-secondary" >Sign In</button>
+          
+          </div>
+          </form>
         </div>
         <div class="modal-footer">
 

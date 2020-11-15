@@ -1,4 +1,12 @@
-var db = require('../db');
+//
+//
+//EVERYTHING THAT WAS COMMENTED OUT WAS DUE TO IT NOT BEING NEEDED.
+//EVERYTHING WAS MOVED TO ROUTES.JS
+//UNCOMMENT OUT THE FUNCTIONS FOR DIAGNOSTIC MEANS
+//
+//
+//
+//var db = require('../db');
 //var $ =require('jquery');
 //var app = require('../server');
 
@@ -11,24 +19,24 @@ var db = require('../db');
 //});
 
 
-function plswork(a) {
- alert("POOP" + a);
-}
-var logname;
-var logpass;
+//function plswork(a) {
+// alert("POOP" + a);
+//}
+//var logname;
+//var logpass;
       
-function myFunction(name,pass) {
+//function myFunction(name,pass) {
 
-    alert("BUTTON PRESSED");
-    logname = name;
-    logpass = pass;
-    select();
+//    alert("BUTTON PRESSED");
+//   logname = name;
+//    logpass = pass;
+//    select();
     
     //at least it gets the values pls kill me
     //alert(name + " " + pass);
     //uncomment to test for functionality
     //alert("POOOPOPOPP");
-}
+//}
 
 //function signup(firstname, lastname, email, pass, confirmpass) {
 //   alert("button pressed\nFunction called: values passed: " + firstname + ' ' + lastname + ' ' + email + ' ' + pass + ' ' + confirmpass);
@@ -43,10 +51,10 @@ function signup() {
     return false;
 }
 
-function select(){
-
-    alert("FUNCTION CALLED: VALUES PASSED: " + logname + " " + logpass);
-    
+//function select(){
+//
+//    alert("FUNCTION CALLED: VALUES PASSED: " + logname + " " + logpass);
+//    
     //app.post('/VIEW', (req, res) => {
 
     //console.log("POST WAS ENTERED");
@@ -67,7 +75,7 @@ function select(){
     //    console.log("1 record selected??????");
     //    alert("SOMETHING HAPPENED???");
     //});
-}
+//}
 
 
 

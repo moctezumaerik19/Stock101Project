@@ -30,53 +30,90 @@ router.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../Home.html'));
 });
 
-//uncomment this block of code to test serverside database connection
-//db.connect(function(err){
-//    if(err) throw err;
-//    console.log("SOMETHING IS HAPPENING? I HOPE");
-//});
+//These next lines of code connect to the database
+//only need one connection for the whole shebang
+//do not connect again elsewhere, will crash the user session
+db.connect(function(err){
+    if(err) throw err;
+    console.log("CONNECTED");
+});
 
 router.post('/',function(req,res){
-    db.connect(function(err) {
-        console.log("CONNECTING...");
-        if(err) throw err;
-            else {
-                console.log("CONNECTED");
-                var user1 =  req.body.signInName;
-                var pass1 = req.body.signInPass;
-                var sql = "SELECT * FROM student WHERE username = ? AND password = ?";
+        
+    console.log("CONNECTED");
+    var user1 = req.body.signInName;
+    var pass1 = req.body.signInPass;
+    var sql = "SELECT * FROM student WHERE username = ? AND password = ?";
 
-                console.log(user1);
+    console.log(user1);
 
-                //console.log("TEST");
-                db.query(sql,[user1,pass1], function (err, result) {
-                    if(err) {
-                        console.log(err); 
-                        res.json({"error":true});
-                    }
-                    else{
-                        if(result != ""){
-                            console.log("IF STATEMENT WORKS");
-                            res.sendFile(path.join(__dirname, '../StudentDash.html'));
-                        }
-                        else{
-                            console.log(result);
-                        }
-                        console.log(result); 
-                        //res.sendFile(path.join(__dirname, '../StudentDash.html'));
-                        //res.json(result); 
-                        
-                    }
-                });
-                
-                
-                
-
-
-               
+    //console.log("TEST");
+    db.query(sql,[user1,pass1], function (err, result) {
+        if(err) {
+            console.log(err); 
+            res.json({"error":true});
+        }
+        else{
+            if(result != ""){
+                            
+                //UNCOMMENT FOR TESTING
+                //console.log("IF STATEMENT WORKS");
+                //res.json(result);
+                            
+                res.sendFile(path.join(__dirname, '../StudentDash.html'));
             }
-        });
+            else{
+                            
+                res.sendFile(path.join(__dirname, '../Home.html'));
+                console.log(result);
+            }
 
+            //UNCOMMENT FOR TESTING
+            //console.log(result); 
+            //res.sendFile(path.join(__dirname, '../StudentDash.html'));
+            //res.json(result);      
+        }
+    });  
+});
+
+router.post('/',function(req,res){
+        
+    console.log("CONNECTED");
+    var userin = req.body.signupname;
+    var passin = req.body.signupPassword;
+    var sql2 = "INSERT INTO teacher (username, password ) VALUES (?,?)";
+
+    console.log("something is happening at least ????");
+    console.log(userin);
+    console.log(passin);
+
+    //console.log("TEST");
+    db.query(sql,[userin,passin], function (err, result) {
+        if(err) {
+            console.log(err); 
+            res.json({"error":true});
+        }
+        else{
+            if(result != ""){
+                            
+                //UNCOMMENT FOR TESTING
+                console.log("IF STATEMENT WORKS");
+                //res.json(result);
+                            
+                res.sendFile(path.join(__dirname, '../StudentDash.html'));
+            }
+            else{
+                console.log("something is wonky");    
+                res.sendFile(path.join(__dirname, '../Home.html'));
+                console.log(result);
+            }
+
+            //UNCOMMENT FOR TESTING
+            //console.log(result); 
+            //res.sendFile(path.join(__dirname, '../StudentDash.html'));
+            //res.json(result);      
+        }
+    });  
 });
 
 
@@ -105,7 +142,6 @@ router.get('/TeacherSection.html',function(req, res){
 router.get('/WhatsStock.html',function(req, res){
     res.sendFile(path.join(__dirname, '../WhatsStock.html'));
 })
-
 
 
 router.get('/quizOne.html',function(req, res){

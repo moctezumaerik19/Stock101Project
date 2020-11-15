@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <html lang="en">
-  <head>
+<head>
 
     <!--PLACE JS SCRIPTS HERE???????-->
     <!-- Required meta tags -->
@@ -8,77 +8,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script>
+        var myInput = document.getElementById("signupPassword");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
 
-    
+        // When the user clicks on the password field, show the message box
+        myInput.onfocus = function () {
+            document.getElementById("message").style.display = "block";
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function () {
+            document.getElementById("message").style.display = "none";
+        }
+
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function () {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if (myInput.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+            } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+            }
+
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if (myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+            } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+            }
+
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if (myInput.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+            } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+            }
+
+            // Validate length
+            if (myInput.value.length >= 4) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+            } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+            }
+        }
+    </script>
+
+
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-      .LogoNav
-      {
-        height: 60px;
-        width: 70px;
-      }
-      .signin, .signup
-      {
-        min-width: 110px;
-	      max-height: 36px;
-        border: none;
-        background: transparent;
-      }
-      .modal-login
-      {
-        width:350px;
+        .LogoNav {
+            height: 60px;
+            width: 70px;
+        }
 
-      }
-      .modal-header
-      {
-        border: none;
-        font-size: 2em;
-      }
-      #signInInput
-      {
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        padding-top: 20px;
-      }
-      #userIcon
-      {
-        font-size: 90px;
-      }
-      #EmailIcon
-      {
-        font-size: 20px;
-      }
-      #pwdIcon
-      {
-        font-size: 30px;
-      }
-      .modal-footer
-      {
-        border-top: none;
-      }
-      .form-group
-      {
-        margin-top: 15px;
-      }
-      #teachIcon, #stuIcon
-      {
-        font-size: 70px;
-        padding-bottom: 20px;
-      }
-      .pic1
-      {
-        height: 300px;
-        margin-left: 35%;
-        margin-top: 50px;
-      }
+        .signin, .signup {
+            min-width: 110px;
+            max-height: 36px;
+            border: none;
+            background: transparent;
+        }
+
+        .modal-login {
+            width: 350px;
+        }
+
+        .modal-header {
+            border: none;
+            font-size: 2em;
+        }
+
+        #signInInput {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            padding-top: 20px;
+        }
+
+        #userIcon {
+            font-size: 90px;
+        }
+
+        #EmailIcon {
+            font-size: 20px;
+        }
+
+        #pwdIcon {
+            font-size: 30px;
+        }
+
+        .modal-footer {
+            border-top: none;
+        }
+
+        .form-group {
+            margin-top: 15px;
+        }
+
+        #teachIcon, #stuIcon {
+            font-size: 70px;
+            padding-bottom: 20px;
+        }
+
+        .pic1 {
+            height: 300px;
+            margin-left: 35%;
+            margin-top: 50px;
+        }
     </style>
-	  
+
     <title>Home</title>
-  </head>
+</head>
 	
 	
   <body>
@@ -190,12 +248,12 @@
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" name="signupPassword" placeholder="password" onkeyup="validate()" required></input>
+                    <input class="form-control" type="password" name="signupPassword" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" required></input>
                     
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" name="confirmPass" placeholder="confirm password" onkeyup="validate()" required></input>
-                    <div id="validpass"></div>
+                    <input class="form-control" type="password" name="confirmPass" placeholder="confirm password" required></input>
+                    <div id="message"><p id="validpass" class="invalid"></p></div>
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" id="signupClassName" placeholder="class name" required></input>

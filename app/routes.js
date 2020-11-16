@@ -71,6 +71,7 @@ router.post('/',function(req,res){
                       throw err
                     } else if (!isMatch) {
                       console.log("Password doesn't match!")
+                      res.sendFile(path.join(__dirname, '../Home.html'));
                     } else {
                       console.log("Password matches!")
                       res.sendFile(path.join(__dirname, '../StudentDash.html'));

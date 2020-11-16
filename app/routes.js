@@ -196,6 +196,28 @@ router.post('/plswork2', function (req, res) {
 
 
 
+router.post('/getscore',function(req,res){
+    console.log("TEST TO SEE IF QUIZ INPUT IS ROUTED CORRECTLY");
+    var grade = req.body.score99;
+    var userCookie = req.body.Uname;
+    var sqlGrade = "UPDATE student SET progress = ? WHERE username = ?"
+
+
+    console.log(grade);
+    db.query(sqlGrade, [grade,userCookie], function (err, result) {
+        if (err) {
+            console.log(err);
+            res.json({ "error": true });
+        }
+        console.log("SCORE WAS INSERTED");
+        res.sendFile(path.join(__dirname, '../StudentDash.html'));
+    });
+
+});
+
+
+
+
 //html files should be routed after this line (JUST WORKS IDK WHY)
 
 router.get('/aboutus.html',function(req, res){

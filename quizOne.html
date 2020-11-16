@@ -89,7 +89,7 @@
 
     <h2 class="text-center">Quiz</h2>
     <!--Quiz question-->
-    <form id="Quiz" name="quiz">
+    <form id="Quiz" name="quiz" >
       <p>1.what is stock market</p>
       <input type="radio" id="mulChoice" name="q1" value="wrong1">A fancy grocery store
       <br>
@@ -99,7 +99,7 @@
       <br>
       <input type="radio" id="mulChoice" name="q1" value="right">A place where parts of businesses are bought and sold
       <br>
-
+      <br>
       <p>2. what is unit of stock? </p>
       <input type="radio" id="mulChoice" name="q2" value="2wrong1">piece
       <br>
@@ -109,7 +109,7 @@
       <br>
       <input type="radio" id="mulChoice" name="q2" value="2right">share
       <br>
-
+      <br>
       <p>3. what is stock market tracking?</p>
       <input type="radio" id="mulChoice" name="q3" value="3wrong1">businesses
       <br>
@@ -126,22 +126,24 @@
       <div class="modal fade text-center" id="resultPopup">
         <div class="modal-dialog">
           <div class="modal-content">
-            <p id="yourScore"></p>
-            <a href="StudentDash.html" class="close btn btn-secondary">close</a>
+            <p id="yourScore">0</p>
+            
+            <form id="scoreform" method="POST" action="/getscore">
+              <input type="hidden" id="passingscore" name="score99" value="00" />
+              <input type="hidden" id="loggedon" name="Uname" value="" />
+              <button type="submit" id="leaveButton" class="btn btn-secondary">Close</button>
+            </form>
 
+            
           </div>
         </div>
       </div>
     </div>
 
-
-
+   
     <!--show score after finish-->
-
-
-
-
-    </div>
+  
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -170,12 +172,18 @@
         }
         document.getElementById("showScore").style.visibility = "visible";
 
+        document.getElementById("passingscore").innerHTML = correct;
+
         document.getElementById("yourScore").innerHTML = "You got "+ correct + " out of 3.";
 
         if(typeof(Storage)!=="undefined"){
               var scorelog = correct;
+              
               //alert("Current user is :" + userlog);
+              var userCookie = sessionStorage.getItem("loggedIn");
               sessionStorage.setItem("userscore",scorelog);
+              document.getElementById("passingscore").value = scorelog;
+              document.getElementById("loggedon").value = userCookie;
               //alert("TESTING SCORE" + scorelog);
             }
           

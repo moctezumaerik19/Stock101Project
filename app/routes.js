@@ -202,7 +202,7 @@ router.post('/plswork2', function (req, res) {
                 //CHECKS FOR MATCHING PASSWORDS
                 //console.log("TEST");
                 //alert("PASSWORDS DONT MATCH TRY AGAIN");
-                //res.send("PASSWORDS DONT MATCH TRY AGAIN");
+                res.send("PASSWORDS DONT MATCH TRY AGAIN");
                 res.sendFile(path.join(__dirname, '../Home.html'));
 
             }

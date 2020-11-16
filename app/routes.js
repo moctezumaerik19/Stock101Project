@@ -4,6 +4,12 @@ var router = express.Router();
 var mysql = require('mysql');
 var db = mysql.createConnection({host: "stock101.mysql.database.azure.com", user: "SoftwareProject@stock101", password: "Stock101", database: "main", port: "3306"});
 var app = require("../server");
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+
+
 module.exports = router;
 
 var bodyParser = require('body-parser');
@@ -45,18 +51,34 @@ router.post('/',function(req,res){
     var user1 = req.body.signInName;
     var pass1 = req.body.signInPass;
     var sql = "SELECT * FROM student WHERE username = ? AND password = ?";
-
+    var sql2 = "SELECT * FROM student WHERE username = ? "
     console.log(user1);
-
-    //console.log("TEST");
-    db.query(sql,[user1,pass1], function (err, result) {
+    db.query(sql2,[user1], function (err, result) {
         if(err) {
             console.log(err); 
             res.json({"error":true});
         }
         else{
             if(result != ""){
-                   
+                
+                console.log(result[0].password);
+                
+                bcrypt.compare(pass1, result[0].password , function(err, isMatch) {
+                    console.log(pass1);
+                    console.log(result[0].password);
+                    console.log("TESTTESTESTESTSET");
+                    if (err) {
+                      throw err
+                    } else if (!isMatch) {
+                      console.log("Password doesn't match!")
+                    } else {
+                      console.log("Password matches!")
+                      res.sendFile(path.join(__dirname, '../StudentDash.html'));
+                    }
+                  })
+
+
+
                 //UNCOMMENT FOR TESTING
                 //console.log("IF STATEMENT WORKS");
                 //res.json(result);
@@ -64,7 +86,7 @@ router.post('/',function(req,res){
             
                 //console.log(currentUser);
                 //console.log("ABOVE IS CURRENT USER");
-                res.sendFile(path.join(__dirname, '../StudentDash.html'));
+                //res.sendFile(path.join(__dirname, '../StudentDash.html'));
             }
             else{
                 res.sendFile(path.join(__dirname, '../Home.html'));
@@ -77,7 +99,9 @@ router.post('/',function(req,res){
             //res.json(result);      
         }
     });  
+    
 });
+
 
 router.post('/plswork', function (req, res) {
 
@@ -104,9 +128,6 @@ router.post('/plswork', function (req, res) {
         }
         else {
 
-
-
-
             if (passin != passcheck) {
 
                 //console.log("TEST");
@@ -116,18 +137,33 @@ router.post('/plswork', function (req, res) {
 
             }
             else {
-                db.query(sql2, [userin, passin], function (err, result) {
-                    if (err) {
-                        console.log(err);
-                        res.json({ "error": true });
-                    }
-                    else {
-                        console.log("INPUT WAS INSERTED");
 
-                        //UNCOMMENT FOR TESTING
-                        //console.log(result); 
-                        res.sendFile(path.join(__dirname, '../Home.html'));
-                        //res.json(result);      
+                bcrypt.genSalt(saltRounds, function (err, salt) {
+                    if (err) {
+                      throw err
+                    } else {
+                      bcrypt.hash(passin, salt, function(err, hash) {
+                        if (err) {
+                          throw err
+                        } else {
+                          console.log(hash);
+                          db.query(sql2, [userin, hash], function (err, result) {
+                            if (err) {
+                                console.log(err);
+                                res.json({ "error": true });
+                            }
+                            else {
+                                
+                                console.log("INPUT WAS INSERTED");
+        
+                                //UNCOMMENT FOR TESTING
+                                //console.log(result); 
+                                res.sendFile(path.join(__dirname, '../Home.html'));
+                                //res.json(result);      
+                            }
+                        });
+                        }
+                      })
                     }
                 });
             }
@@ -173,19 +209,34 @@ router.post('/plswork2', function (req, res) {
 
             else {
 
-                //console.log("TEST");
-                db.query(sql2, [userin, passin, codeT], function (err, result) {
+                bcrypt.genSalt(saltRounds, function (err, salt) {
                     if (err) {
-                        console.log(err);
-                        res.json({ "error": true });
-                    }
-                    else {
-                        console.log("INPUT WAS INSERTED");
+                      throw err
+                    } else {
+                      bcrypt.hash(passin, salt, function(err, hash) {
+                        if (err) {
+                          throw err
+                        } else {
 
-                        //UNCOMMENT FOR TESTING
-                        //console.log(result); 
-                        res.sendFile(path.join(__dirname, '../Home.html'));
-                        //res.json(result);      
+                          console.log(hash)
+
+                          db.query(sql2, [userin, hash, codeT], function (err, result) {
+                            if (err) {
+                                console.log(err);
+                                res.json({ "error": true });
+                            }
+                            else {
+        
+                                console.log("INPUT WAS INSERTED");
+        
+                                //UNCOMMENT FOR TESTING
+                                //console.log(result); 
+                                res.sendFile(path.join(__dirname, '../Home.html'));
+                                //res.json(result);      
+                            }
+                        });
+                        }
+                      });
                     }
                 });
             }

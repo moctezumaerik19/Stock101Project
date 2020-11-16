@@ -33,7 +33,7 @@ router.get('/Stock101Project/app/signup.js', function(req, res) {
 
 
 router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, '../Home.html'));
+    res.sendFile(path.join(__dirname, '../StudentDash.html'));
 });
 
 //These next lines of code connect to the database

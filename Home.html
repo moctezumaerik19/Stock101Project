@@ -124,15 +124,31 @@
           <i id="userIcon"class="fas fa-user-circle"></i>
           <br><br>
           <i id="EmailIcon"class="fa fa-envelope"></i>
-          <input name="signInName" type="text" class="email" placeholder="Enter Username"></input>
+          <input id="yonk" name="signInName" type="text" class="email" placeholder="Enter Username" value=""></input>
           <br>
           <i id="pwdIcon" class="fa fa-lock"></i>
           <input name="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
           <br><br>
-          <button type="submit" id="loginButton" class="btn btn-secondary" >Sign In</button>
+          <button type="submit" id="loginButton" class="btn btn-secondary" onclick="store(yonk.value)"  >Sign In</button>
           
           </div>
           </form>
+          <script>
+          if(typeof(Storage)!=="undefined"){
+            function store(yonked){
+              var userlog = yonked;
+              //alert("Current user is :" + userlog);
+              sessionStorage.setItem("loggedIn",userlog);
+            }
+          }
+          else{
+            alert("TETSTSTSTST");
+          }
+          </script>
+
+
+
+
         </div>
         <div class="modal-footer">
 

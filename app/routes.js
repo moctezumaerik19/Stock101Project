@@ -38,8 +38,9 @@ db.connect(function(err){
     console.log("CONNECTED");
 });
 
+//var currentUser;
 router.post('/',function(req,res){
-        
+    
     console.log("CONNECTED");
     var user1 = req.body.signInName;
     var pass1 = req.body.signInPass;
@@ -55,15 +56,17 @@ router.post('/',function(req,res){
         }
         else{
             if(result != ""){
-                            
+                   
                 //UNCOMMENT FOR TESTING
                 //console.log("IF STATEMENT WORKS");
                 //res.json(result);
-                            
+                //currentUser = user1;
+            
+                //console.log(currentUser);
+                //console.log("ABOVE IS CURRENT USER");
                 res.sendFile(path.join(__dirname, '../StudentDash.html'));
             }
             else{
-                            
                 res.sendFile(path.join(__dirname, '../Home.html'));
                 console.log(result);
             }
@@ -75,6 +78,9 @@ router.post('/',function(req,res){
         }
     });  
 });
+
+//console.log("after logging in user is :");
+//console.log(currentUser);
 
 function validate() {
     'use strict'
@@ -128,9 +134,6 @@ router.post('/plswork',function(req,res){
             res.sendFile(path.join(__dirname, '../Home.html'));
         }
         else{
-
-
-
 
             if(passin != passcheck){
 
@@ -217,6 +220,9 @@ router.post('/plswork2',function(req,res){
         }
     });
 });
+
+
+
 
 //html files should be routed after this line (JUST WORKS IDK WHY)
 

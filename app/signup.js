@@ -47,15 +47,24 @@
 //function signup(firstname, lastname, email, pass, confirmpass) {
 //   alert("button pressed\nFunction called: values passed: " + firstname + ' ' + lastname + ' ' + email + ' ' + pass + ' ' + confirmpass);
 //}
-function signup() {
-    var firstname = document.forms["signupForm"]["signupName"].value;
- //   var lastname = document.forms["signupForm"]["signupLastName"].value;
-    var pass = document.forms["signupForm"]["signupPassword"].value;
-    var confirmpass = document.forms["signupForm"]["signupConfirmpass"].value;
-    alert("button pressed\nFunction called: values passed: " + firstname + ' ' + pass + ' ' + confirmpass);
-    return false;
+//function signup() {
+//    var firstname = document.forms["signupForm"]["signupName"].value;
+// //   var lastname = document.forms["signupForm"]["signupLastName"].value;
+//    var pass = document.forms["signupForm"]["signupPassword"].value;
+//    var confirmpass = document.forms["signupForm"]["signupConfirmpass"].value;
+//    alert("button pressed\nFunction called: values passed: " + firstname + ' ' + pass + ' ' + confirmpass);
+//    return false;
+//}
+function validate() {
+    if (document.getElementsByName('signupPassword').value == document.getElementsByName('confirmpass').value) {
+        document.getElementById('validpass').style.color = 'green';
+        document.getElementById('validpass').innerHTML = 'Valid';
+    }
+    else {
+        document.getElementById('validpass').style.color = 'red';
+        document.getElementById('validpass').innerHTML = 'passwords do not match';
+    }
 }
-
 //function select(){
 //
 //    alert("FUNCTION CALLED: VALUES PASSED: " + logname + " " + logpass);

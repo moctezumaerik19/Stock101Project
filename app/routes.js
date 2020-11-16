@@ -79,77 +79,49 @@ router.post('/',function(req,res){
     });  
 });
 
-//console.log("after logging in user is :");
-//console.log(currentUser);
+router.post('/plswork', function (req, res) {
 
-function validate() {
-    'use strict'
-    window.addEventListener('load', function () {
-        var forms = document.getElementsByClassName('needs-validation');
-        var validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() == false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-    //if (passin.length === validpass.length) {
-    //    for (index = 0; index < passin.length; index++) {
-    //        if (passin[index] !== ' ' || validpass[index] !== ' ') {
-    //            if (passin[index] !== validpass[index]) {
-    //                document.getElementsByName("signupPassword").setCustomValidity("Passwords do not match!");
-    //            }
-    //        }
-    //        else {
-    //            document.getElementsByName("signupPassword").setCustomValidity("Passwords cannot contain spaces!");
-    //        }
-    //    }
-    //}
-}
-
-router.post('/plswork',function(req,res){
-        
     console.log("CONNECTED");
     var userin = req.body.signupName;
     var passin = req.body.signupPassword;
     var passcheck = req.body.confirmPass;
     var sql2 = "INSERT INTO teacher (username, password ) VALUES (?,?)";
-    var sqlcheck2 ="SELECT username FROM teacher WHERE username =?";
+    var sqlcheck2 = "SELECT username FROM teacher WHERE username =?";
 
     console.log("something is happening at least ????");
     console.log(userin);
     console.log(passin);
 
-    db.query(sqlcheck2,userin, function(err,result){
-        if(err) {
-            console.log(err); 
-            res.json({"error":true});
+    db.query(sqlcheck2, userin, function (err, result) {
+        if (err) {
+            console.log(err);
+            res.json({ "error": true });
         }
-        if(result != ""){
+        if (result != "") {
             //CHECKS FOR USERS ALREADY IN DATA BASE
             console.log("username already exists check");
             res.sendFile(path.join(__dirname, '../Home.html'));
         }
-        else{
+        else {
 
-            if(passin != passcheck){
 
-            //console.log("TEST");
-            //alert("PASSWORDS DONT MATCH TRY AGAIN");
-            //res.send("PASSWORDS DONT MATCH TRY AGAIN");
-            res.sendFile(path.join(__dirname, '../Home.html'));
+
+
+            if (passin != passcheck) {
+
+                //console.log("TEST");
+                //alert("PASSWORDS DONT MATCH TRY AGAIN");
+                //res.send("PASSWORDS DONT MATCH TRY AGAIN");
+                //res.sendFile(path.join(__dirname, '../Home.html'));
 
             }
-            else{
-                db.query(sql2,[userin,passin], function (err, result) {
-                    if(err) {
-                        console.log(err); 
-                        res.json({"error":true});
+            else {
+                db.query(sql2, [userin, passin], function (err, result) {
+                    if (err) {
+                        console.log(err);
+                        res.json({ "error": true });
                     }
-                    else{
+                    else {
                         console.log("INPUT WAS INSERTED");
 
                         //UNCOMMENT FOR TESTING
@@ -158,13 +130,13 @@ router.post('/plswork',function(req,res){
                         //res.json(result);      
                     }
                 });
-            }   
+            }
         }
-    });   
+    });
 });
 
-router.post('/plswork2',function(req,res){
-        
+router.post('/plswork2', function (req, res) {
+
     console.log("CONNECTED");
     var userin = req.body.stuName;
     var passin = req.body.stuPass;
@@ -178,36 +150,36 @@ router.post('/plswork2',function(req,res){
     console.log(passin);
     console.log(codeT);
 
-    db.query(sqlcheck,userin, function(err,result){
-        if(err) {
-            console.log(err); 
-            res.json({"error":true});
+    db.query(sqlcheck, userin, function (err, result) {
+        if (err) {
+            console.log(err);
+            res.json({ "error": true });
         }
-        if(result != ""){
+        if (result != "") {
             //CHECKS FOR USERS ALREADY IN DATA BASE
             console.log("username already exists check");
             res.sendFile(path.join(__dirname, '../Home.html'));
         }
-        else{
+        else {
 
-            if(passin != passcheck2){
+            if (passin != passcheck2) {
                 //CHECKS FOR MATCHING PASSWORDS
                 //console.log("TEST");
                 //alert("PASSWORDS DONT MATCH TRY AGAIN");
                 //res.send("PASSWORDS DONT MATCH TRY AGAIN");
                 res.sendFile(path.join(__dirname, '../Home.html'));
-            
+
             }
-            
-            else{
+
+            else {
 
                 //console.log("TEST");
-                db.query(sql2,[userin,passin,codeT], function (err, result) {
-                    if(err) {
-                        console.log(err); 
-                        res.json({"error":true});
+                db.query(sql2, [userin, passin, codeT], function (err, result) {
+                    if (err) {
+                        console.log(err);
+                        res.json({ "error": true });
                     }
-                    else{
+                    else {
                         console.log("INPUT WAS INSERTED");
 
                         //UNCOMMENT FOR TESTING
@@ -216,7 +188,7 @@ router.post('/plswork2',function(req,res){
                         //res.json(result);      
                     }
                 });
-            }  
+            }
         }
     });
 });

@@ -113,9 +113,8 @@ router.post('/plswork', function (req, res) {
     var sql2 = "INSERT INTO teacher (username, password ) VALUES (?,?)";
     var sqlcheck2 = "SELECT username FROM teacher WHERE username =?";
 
-    console.log("something is happening at least ????");
-    console.log(userin);
-    console.log(passin);
+    //console.log("Test");
+    
 
     db.query(sqlcheck2, userin, function (err, result) {
         if (err) {

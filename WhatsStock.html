@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -43,78 +43,225 @@
         margin-top: 20px;
         margin-bottom: 20px;
       }
+    </style>
+    <style>
+        /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            border: 1px solid #f1f1f1;
+            perspective: 1000px; /* Remove this if you don't want the 3D effect */
+        }
 
+        /* This container is needed to position the front and back side */
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
 
+        /* Do an horizontal flip when you move the mouse over the flip box container */
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Position the front and back side */
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+        }
+
+        /* Style the front side (fallback if image is missing) */
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        /* Style the back side */
+        .flip-card-back {
+            background-color: dodgerblue;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
     </style>
 
     <title>Lesson 1</title>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"><img class="LogoNav" src="/img/logo.png" alt="BrandLogo"></a> <!--put brand logo here-->
-      <ul class="navbar-nav ml-auto">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"><img class="LogoNav" src="/img/logo.png" alt="BrandLogo"></a> <!--put brand logo here-->
+          <ul class="navbar-nav ml-auto">
 
-        <!--dropdown menu for profile-->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            <i class="far fa-user"></i></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <h4 class="dropdown-item" id="wocka">PlaceHolder</h4>
-            <a class="dropdown-item" href="StudentDash.html">profile</a>
-            <a class="dropdown-item" href="Score.html">Score</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="Home.html">Log out</a>
+              <!--dropdown menu for profile-->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      <i class="far fa-user"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                      <h4 class="dropdown-item" id="wocka">PlaceHolder</h4>
+                      <a class="dropdown-item" href="StudentDash.html">profile</a>
+                      <a class="dropdown-item" href="Score.html">Score</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="Home.html">Log out</a>
+                  </div>
+              </li>
+          </ul>
+      </nav>
+
+
+      <script>
+          //alert("TESTTESTSETSETESTE");
+          var storedValue = sessionStorage.getItem("loggedIn");
+          //document.write(storedValue);
+          document.getElementById("wocka").innerHTML = "User: " + storedValue;
+      </script>
+
+
+
+      <a href="StudentDash.html">back </a>
+
+      <h2 class="text-center">What is Stock??</h2>
+
+
+      <div class="lessonOne">
+          <img src="/img/lesson1.png" alt="stock" class="stockpic">
+          <p>
+              Stock is <a href="#term1" id="btn1">security</a> that represents the ownership of a fraction of a corporation.
+
+              The term "security" refers to a fungible, negotiable financial instrument that holds some type of monetary value.
+
+              This entitles the owner of the stock to a proportion of the corporation's assets and profits equal to how much stock they own. Units of stock are called "shares."
+
+              Investors can buy and sell, privately or publicly, corporate assets predominately through a stock exchange system while conforming to government regulations. These regulations are to protect investors from fraudulent practices.
+          </p>
+          <p>
+              When corporations issue stocks they are raising funds to operate their businesses. When an investor who owns a stock, the shareholder owns a portion of the company. If the the shareholder owns 100 shares out of the 1,000 shares of stock outstanding, they own and claim 10% of the company's assets and earnings.
+
+              Shareholders do not technically own corporations; they own shares issued by corporations. Note that corporations are treated as legal persons in the sense they can file taxes, borrow, own property, and be sued. The distinction is important because the corporation are the true owners of their own assets. Shareholders are simply making money when the company makes money through their investments by recieving <a href="#term2" id="btn2">dividends</a>.
+          </p>
+      </div>
+
+      <!--<a class="btn btn-secondary quizButton" href="quizOne.html">Quiz</a>-->
+      <div class="modal" id="term1">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <span class="close">&times;</span>
+                  <div class="flip-card">
+                      <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                              <h1 style="text-align:center; font-size:300%">Security</h1>
+                          </div>
+                          <div class="flip-card-back">
+                              <p>The term "security" refers to a fungible, negotiable financial instrument that holds some type of monetary value.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </li>
-    </nav>
+      </div>
 
+      <div class="modal" id="term2">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <span class="close">&times;</span>
+                  <div class="flip-card">
+                      <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                              <h1 style="text-align:center; font-size:300%">Dividend</h1>
+                          </div>
+                          <div class="flip-card-back">
+                              <p>The distribution of profits made by the company that is paid either in cash or in the form of additional stock.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-    <script>
-      //alert("TESTTESTSETSETESTE");
-      var storedValue = sessionStorage.getItem("loggedIn");
-      //document.write(storedValue);
-      document.getElementById("wocka").innerHTML = "User: " + storedValue;
-    </script>
+      <script>
+          // Get the modal
+          var modal1 = document.getElementById("term1");
+          var modal2 = document.getElementById("term2");
 
+          // Get the button that opens the modal
+          var btn1 = document.getElementById("btn1");
+          var btn2 = document.getElementById("btn2");
 
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
 
-    <a href="StudentDash.html">back </a>
+          // When the user clicks on the button, open the modal
+          btn1.onclick = function () {
+              modal1.style.display = "block";
+          }
+          btn2.onclick = function () {
+              modal2.style.display = "block";
+          }
 
-    <h2 class="text-center">What is Stock??</h2>
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function () {
+              modal1.style.display = "none";
+              modal2.style.display = "none";
+          }
 
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function (event) {
+              if (event.target == modal1) {
+                  modal1.style.display = "none";
+              }
+              if (event.target == modal2) {
+                  modal2.style.display = "none";
+              }
+          }
+      </script>
 
-    <div class="lessonOne">
-    <img src="/img/lesson1.png" alt="stock" class="stockpic">
-    <p>Stock is security that represents the ownership of a fraction of a corporation.
-
-The term "security" refers to a fungible, negotiable financial instrument that holds some type of monetary value.
-
-This entitles the owner of the stock to a proportion of the corporation's assets and profits equal to how much stock they own. Units of stock are called "shares."
-
-Investors can buy and sell, privately or publicly, corporate assets predominately through a stock exchange system while conforming to government regulations. These regulations are to protect investors from fraudulent practices.
-</p>
-    <p>
-    The stock market is made up of exchanges, like the New York Stock Exchange and the Nasdaq. Stocks are listed on a specific exchange, which brings buyers and sellers together and acts as a market for the shares of those stocks.
-    The exchange tracks the supply and demand — and directly related, the price — of each stock.
-    </p>
-    </div>
-
-    <a class="btn btn-secondary quizButton" href="quizOne.html">Quiz</a>
-
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

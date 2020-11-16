@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <html lang="en">
-<head>
+  <head>
 
     <!--PLACE JS SCRIPTS HERE???????-->
     <!-- Required meta tags -->
@@ -9,144 +9,102 @@
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
+    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        .LogoNav {
-            height: 60px;
-            width: 70px;
-        }
+      .LogoNav
+      {
+        height: 60px;
+        width: 70px;
+      }
+      .signin, .signup
+      {
+        min-width: 110px;
+	      max-height: 36px;
+        border: none;
+        background: transparent;
+      }
+      .modal-login
+      {
+        width:350px;
 
-        .signin, .signup {
-            min-width: 110px;
-            max-height: 36px;
-            border: none;
-            background: transparent;
-        }
-
-        .modal-login {
-            width: 350px;
-        }
-
-        .modal-header {
-            border: none;
-            font-size: 2em;
-        }
-
-        #signInInput {
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            outline: none;
-            padding-top: 20px;
-        }
-
-        #userIcon {
-            font-size: 90px;
-        }
-
-        #EmailIcon {
-            font-size: 20px;
-        }
-
-        #pwdIcon {
-            font-size: 30px;
-        }
-
-        .modal-footer {
-            border-top: none;
-        }
-
-        .form-group {
-            margin-top: 15px;
-        }
-
-        #teachIcon, #stuIcon {
-            font-size: 70px;
-            padding-bottom: 20px;
-        }
-
-        .pic1 {
-            height: 300px;
-            margin-left: 35%;
-            margin-top: 50px;
-        }
+      }
+      .modal-header
+      {
+        border: none;
+        font-size: 2em;
+      }
+      #signInInput
+      {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        padding-top: 20px;
+      }
+      #userIcon
+      {
+        font-size: 90px;
+      }
+      #EmailIcon
+      {
+        font-size: 20px;
+      }
+      #pwdIcon
+      {
+        font-size: 30px;
+      }
+      .modal-footer
+      {
+        border-top: none;
+      }
+      .form-group
+      {
+        margin-top: 15px;
+      }
+      #teachIcon, #stuIcon
+      {
+        font-size: 70px;
+        padding-bottom: 20px;
+      }
+      .pic1
+      {
+        height: 300px;
+        margin-left: 35%;
+        margin-top: 50px;
+      }
     </style>
-    <link rel="stylesheet" type="text/css" href="/Stock101Project/public/css/styles.css" />
-    <style>
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-top: 6px;
-            margin-bottom: 16px;
-        }
-
-            /* Style the submit button */
-            input[type=submit] {
-                background-color: #4CAF50;
-                color: white;
-            }
-
-        /* Style the container for inputs */
-        .container {
-            background-color: #f1f1f1;
-            padding: 20px;
-        }
-
-        /* The message box is shown when the user clicks on the password field */
-        #message {
-            display: none;
-            background: #f1f1f1;
-            color: #000;
-            position: relative;
-            padding: 20px;
-            margin-top: 10px;
-        }
-
-            #message p {
-                padding: 10px 35px;
-                font-size: 18px;
-            }
-
-        /* Add a green text color and a checkmark when the requirements are right */
-        .valid {
-            color: green;
-        }
-
-            .valid:before {
-                position: relative;
-                left: -35px;
-                content: "&#10004;";
-            }
-
-        /* Add a red text color and an "x" icon when the requirements are wrong */
-        .invalid {
-            color: red;
-        }
-
-            .invalid:before {
-                position: relative;
-                left: -35px;
-                content: "&#10006;";
-            }
-    </style>
+	  
     <title>Home</title>
-</head>
+  </head>
 	
 	
-<body>
+  <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a href="Home.html" class="navbar-brand">
+            <img class="LogoNav" src="/img/logo.png" alt="BrandLogo">
+          </a>
+        </li>
+      </ul>
+      <div class="navbar-nav ml-auto">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a href="Home.html" class="navbar-brand">
-                    <img class="LogoNav" src="/img/logo.png" alt="BrandLogo">
-                </a>
-            </li>
+	  <!--about us page-->
+	  <li class="nav-item active">
+            <a href="aboutus.html" class="btn signin btn-secondary">About Us</a>
+          </li>
+          <li class="nav-item active">
+            <!--button for sign in-->
+            <button type="button" class="btn signin btn-secondary" data-toggle="modal" data-target="#login">sign in </button>
+          </li>
+          <li>
+            <!--button for sign up-->
+            <button type="button" class="btn signup btn-secondary" data-toggle="modal" data-target="#signup">sign up</button>
+          </li>
         </ul>
-<<<<<<< HEAD
       </div>
   </nav>
 
@@ -191,193 +149,146 @@
 
 
 
-=======
-        <div class="navbar-nav ml-auto">
-            <ul class="navbar-nav">
-                <!--about us page-->
-                <li class="nav-item active">
-                    <a href="aboutus.html" class="btn signin btn-secondary">About Us</a>
-                </li>
-                <li class="nav-item active">
-                    <!--button for sign in-->
-                    <button type="button" class="btn signin btn-secondary" data-toggle="modal" data-target="#login">sign in </button>
-                </li>
-                <li>
-                    <!--button for sign up-->
-                    <button type="button" class="btn signup btn-secondary" data-toggle="modal" data-target="#signup">sign up</button>
-                </li>
-            </ul>
->>>>>>> 6d0fb4fd4236784e575a7d25bb641c6ac34568ca
         </div>
-    </nav>
+        <div class="modal-footer">
 
-    <!--sign in modal -->
-    <div class="modal fade text-center" id="login">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <div class="modal-header ">
-                    <div class="modal-title text-center w-100">Sign In</div>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <div class="modal-body">
-                    <form method="post" action="/">
-                        <div class="form-group">
-
-                            <i id="userIcon" class="fas fa-user-circle"></i>
-                            <br><br>
-                            <i id="EmailIcon" class="fa fa-envelope"></i>
-                            <input name="signInName" type="text" class="email" placeholder="Enter Username"></input>
-                            <br>
-                            <i id="pwdIcon" class="fa fa-lock"></i>
-                            <input name="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
-                            <br><br>
-                            <button type="submit" id="loginButton" class="btn btn-secondary">Sign In</button>
-
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-
-                </div>
-            </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <!--
-      Button works again just use to see if js files are routed correctly
-    <form>
-      <input type="button"  value="Result" onclick="plswork(signupName.value)"/>
-      </form>
-    -->
-    <!--Sign up Choice: Teacher or Student-->
-    <div class="modal fade text-center" id="signup">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <div class="modal-header ">
-                    <div class="modal-title text-center w-100">Sign Up</div>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col">
-                            <i id="teachIcon" class="fas fa-chalkboard-teacher"></i>
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Signup" data-dismiss="modal">Teacher</button>
-                        </div>
-                        <div class="col">
-                            <i id="stuIcon" class="fas fa-users"></i>
-                            <button type="button" class="btn btn-secondary" id="stuButton" data-toggle="modal" data-target="#StudentSignup" data-dismiss="modal">Student</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
+  <!--
+    Button works again just use to see if js files are routed correctly
+  <form>
+    <input type="button"  value="Result" onclick="plswork(signupName.value)"/>
+    </form>
+  -->
+
+  <!--Sign up Choice: Teacher or Student-->
+  <div class="modal fade text-center" id="signup">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="modal-title text-center w-100">Sign Up</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-    </div>
-
-    <!--Teacher sign up modal-->
-    <div class="modal fade text-center" id="Signup">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <div class="modal-header ">
-                    <div class="modal-title text-center w-100">Sign Up</div>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="/plswork" class="was-validated">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="signupName" placeholder="Username" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="password" id="signupPassword" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" required></input>
-                            <div id="message">
-                                <p id="letter" class="invalid">letter</p>
-                                <p id="capital" class="invalid">capital</p>
-                                <p id="length" class="invalid">length</p>
-                                <p id="number" class="invalid">number</p>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="password" name="confirmPass" placeholder="confirm password" required></input>
-
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="signupClassName" placeholder="class name" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" required> I accept the <a href="aboutus.html">Privacy Policy</a>
-                            </label>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Check this box to continue.</div>
-                        </div>
-                        <button type="submit" id="signupButton" class="btn btn-secondary">Sign Up</button>
-                    </form>
-                </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <i id="teachIcon" class="fas fa-chalkboard-teacher"></i>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Signup"  data-dismiss="modal">Teacher</button>
             </div>
-            <div class="modal-footer">
+            <div class="col">
+              <i id="stuIcon" class="fas fa-users"></i>
+              <button type="button" class="btn btn-secondary" id="stuButton" data-toggle="modal" data-target="#StudentSignup" data-dismiss="modal">Student</button>
             </div>
+          </div>
         </div>
-    </div>
-
-    <!--Student sign up modal-->
-    <div class="modal fade text-center" id="StudentSignup">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <div class="modal-header ">
-                    <div class="modal-title text-center w-100">Student Sign Up</div>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="/plswork2">
-                        <div class="form-group">
-                            <input name="stuName" class="form-control" type="text" placeholder="Username" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <input name="stuPass" class="form-control" type="password" placeholder="password" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <input name="confirmPass2" class="form-control" type="password" placeholder="confirm password" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <input id="classCode" name="bode" class="form-control" type="text" placeholder="class code" required></input>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="aboutus.html">Privacy Policy</a></label>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Check this box to continue.</div>
-                        </div>
-                        <button type="submit" class="btn btn-secondary">Sign Up</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-
-                </div>
-            </div>
+        <div class="modal-footer">
         </div>
+      </div>
     </div>
+  </div>
+
+  <!--Teacher sign up modal-->
+  <div class="modal fade text-center" id="Signup">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="modal-title text-center w-100">Sign Up</div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form method="post" action="/plswork" class="was-validated">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="signupName" placeholder="Username" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="signupPassword" placeholder="password" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="confirmPass" placeholder="confirm password" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" id="signupClassName" placeholder="class name" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" required> I accept the <a href="aboutus.html">Privacy Policy</a>
+                    </label>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this box to continue.</div>
+                </div>
+                <button type="submit" id="signupButton" class="btn btn-secondary">Sign Up</button>
+            </form>
+        </div>
+        </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+
+  <!--Student sign up modal-->
+  <div class="modal fade text-center" id="StudentSignup">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <div class="modal-title text-center w-100">Student Sign Up</div>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form method="post" action="/plswork2">
+                <div class="form-group">
+                    <input name="stuName" class="form-control" type="text" placeholder="Username" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <input name="stuPass" class="form-control" type="password" placeholder="password" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <input name="confirmPass2" class="form-control" type="password" placeholder="confirm password" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <input id="classCode" name="bode" class="form-control" type="text" placeholder="class code" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="aboutus.html">Privacy Policy</a></label>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this box to continue.</div>
+                </div>
+                <button type="submit" class="btn btn-secondary">Sign Up</button>
+            </form>
+        </div>
+          <div class="modal-footer">
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!--Home page content-->
+  <img class="pic1" alt="stockandtrade"src="/img/financ.png">
+  <h5 class="text-center">Stock 101, A crash course designed for everyone!</h5>
 
 
-    <!--Home page content-->
-    <img class="pic1" alt="stockandtrade" src="/img/financ.png">
-    <h5 class="text-center">Stock 101, A crash course designed for everyone!</h5>
 
-
-
-
+  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -386,65 +297,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="/Stock101Project/app/signup.js"></script>
-    <script>
-        var myInput = document.getElementById("signupPassword");
-        var letter = document.getElementById("letter");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
 
-        // When the user clicks on the password field, show the message box
-        myInput.onfocus = function () {
-            document.getElementById("message").style.display = "block";
-        }
-
-        // When the user clicks outside of the password field, hide the message box
-        myInput.onblur = function () {
-            document.getElementById("message").style.display = "none";
-        }
-
-        // When the user starts to type something inside the password field
-        myInput.onkeyup = function () {
-            // Validate lowercase letters
-            var lowerCaseLetters = /[a-z]/g;
-            if (myInput.value.match(lowerCaseLetters)) {
-                letter.classList.remove("invalid");
-                letter.classList.add("valid");
-            } else {
-                letter.classList.remove("valid");
-                letter.classList.add("invalid");
-            }
-
-            // Validate capital letters
-            var upperCaseLetters = /[A-Z]/g;
-            if (myInput.value.match(upperCaseLetters)) {
-                capital.classList.remove("invalid");
-                capital.classList.add("valid");
-            } else {
-                capital.classList.remove("valid");
-                capital.classList.add("invalid");
-            }
-
-            // Validate numbers
-            var numbers = /[0-9]/g;
-            if (myInput.value.match(numbers)) {
-                number.classList.remove("invalid");
-                number.classList.add("valid");
-            } else {
-                number.classList.remove("valid");
-                number.classList.add("invalid");
-            }
-
-            // Validate length
-            if (myInput.value.length >= 4) {
-                length.classList.remove("invalid");
-                length.classList.add("valid");
-            } else {
-                length.classList.remove("valid");
-                length.classList.add("invalid");
-            }
-        }
-    </script>
-</body>
+    
+    
+  
+  </body>
 </html>
  

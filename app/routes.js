@@ -13,19 +13,19 @@ const saltRounds = 10;
 module.exports = router;
 
 var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+//var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(bodyParser.urlencoded({
     extended: false
- }));
+}));
  
 app.use(bodyParser.json());
 
   
 
-router.get('/Stock101Project/app/signup.js', function(req, res) {
-    res.sendFile(path.join(__dirname + '/signup.js'));
-});
+//router.get('/Stock101Project/app/signup.js', function(req, res) {
+//    res.sendFile(path.join(__dirname + '/signup.js'));
+//});
 
 
 //js files should be routed before this line (????????) just works this way idk

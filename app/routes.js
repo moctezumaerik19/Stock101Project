@@ -104,7 +104,7 @@ router.post('/',function(req,res){
 });
 
 
-router.post('/plswork', function (req, res) {
+router.post('/tSignUp', function (req, res) {
 
     console.log("CONNECTED");
     var userin = req.body.signupName;
@@ -171,7 +171,7 @@ router.post('/plswork', function (req, res) {
     });
 });
 
-router.post('/plswork2', function (req, res) {
+router.post('/sSignUp', function (req, res) {
 
     console.log("CONNECTED");
     var userin = req.body.stuName;

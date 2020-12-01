@@ -124,25 +124,25 @@
           <i id="userIcon"class="fas fa-user-circle"></i>
           <br><br>
           <i id="EmailIcon"class="fa fa-envelope"></i>
-          <input id="yonk" name="signInName" type="text" class="email" placeholder="Enter Username" value=""></input>
+          <input id="userID" name="signInName" type="text" class="email" placeholder="Enter Username" value=""></input>
           <br>
           <i id="pwdIcon" class="fa fa-lock"></i>
           <input name="signInPass" type="password" class="pwd" placeholder="Enter Password"></input>
           <br><br>
-          <button type="submit" id="loginButton" class="btn btn-secondary" onclick="store(yonk.value)"  >Sign In</button>
+          <button type="submit" id="loginButton" class="btn btn-secondary" onclick="store(userID.value)"  >Sign In</button>
           
           </div>
           </form>
           <script>
           if(typeof(Storage)!=="undefined"){
-            function store(yonked){
-              var userlog = yonked;
+            function store(cookie){
+              var userlog = cookie;
               //alert("Current user is :" + userlog);
               sessionStorage.setItem("loggedIn",userlog);
             }
           }
           else{
-            alert("TETSTSTSTST");
+            alert("TEST");
           }
           </script>
 
@@ -199,7 +199,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-            <form method="post" action="/plswork" >
+            <form method="post" action="/tSignUp" >
                 <div class="form-group">
                     <input class="form-control" type="text" name="signupName" placeholder="Username" required></input>
                     <div class="valid-feedback">Valid.</div>
@@ -245,7 +245,7 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-            <form method="post" action="/plswork2">
+            <form method="post" action="/sSignUp">
                 <div class="form-group">
                     <input name="stuName" class="form-control" type="text" placeholder="Username" required></input>
                     <div class="valid-feedback">Valid.</div>

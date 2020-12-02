@@ -15,4 +15,4 @@ How to Start:
 10. Navigate into the new application folder you dowloaded with the 'cd' command
 11. Once in the new folder, in the same terminal window, type in 'npm install' and hit enter
 12. After the modules download, type in 'npm start' in the terminal
-13. Open up an internet brower of your choice and type in 'localhost:3001'
+13. Open up an internet brower of your choice (FireFox) and type in 'localhost:3001'

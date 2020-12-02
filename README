@@ -1,2 +1,18 @@
 COSC 4319 Software Engineering Final Project - "Stock 101"
 Group Members: Erik Moctezuma, Thomas Welborn, Joshua Renfro, Cherluk Sumdin
+
+How to Start:
+1. Download npm package manager from their website at https://www.npmjs.com/
+2. Download Node.js from their website at https://nodejs.org/
+3. Download Git from their website at git-scm.com
+3. Navigate to our repository on github at https://github.com/moctezumaerik19/Stock101Project
+4. Click on the Green download code button
+5. Copy the Clone Repository URL to your clipboard
+6. Make a new folder to hold the contents
+7. Right click on the folder and click on the "Git Bash Here" option
+8. type in "git clone url" but for the url replace it with the clone repository url from github
+9. Open up your terminal if on Windows
+10. Navigate into the new application folder you dowloaded with the 'cd' command
+11. Once in the new folder, in the same terminal window, type in 'npm install' and hit enter
+12. After the modules download, type in 'npm start' in the terminal
+13. Open up an internet brower of your choice and type in 'localhost:3001'
